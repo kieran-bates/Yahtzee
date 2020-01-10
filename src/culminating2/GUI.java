@@ -10,6 +10,7 @@ package culminating2;
  *
  * @author kibat6204
  */
+import java.util.Random;
 public class GUI extends javax.swing.JFrame {
 
     /**
@@ -18,7 +19,83 @@ public class GUI extends javax.swing.JFrame {
     public GUI() {
         initComponents();
     }
-
+    
+    public boolean onesCheck()
+    {
+        if(oneReg == 1||twoReg == 1||threeReg == 1||fourReg == 1||fiveReg == 1)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public boolean twosCheck()
+    {
+        if(oneReg == 2||twoReg == 2||threeReg == 2||fourReg == 2||fiveReg == 2)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public boolean threesCheck()
+    {
+        if(oneReg == 3||twoReg == 3||threeReg == 3||fourReg == 3||fiveReg == 3)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public boolean foursCheck()
+    {
+        if(oneReg == 4||twoReg == 4||threeReg == 4||fourReg == 4||fiveReg == 4)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public boolean fivesCheck()
+    {
+        if(oneReg == 5||twoReg == 5||threeReg == 5||fourReg == 5||fiveReg == 5)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public boolean sixesCheck()
+    {
+        if(oneReg == 6||twoReg == 6||threeReg == 6||fourReg == 6||fiveReg == 6)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
+    Random random = new Random();
+    int rollCount = 3;
+    
+    int oneReg;
+    int twoReg;
+    int threeReg;
+    int fourReg;
+    int fiveReg;
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -29,99 +106,105 @@ public class GUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        one = new javax.swing.JTextField();
+        two = new javax.swing.JTextField();
+        three = new javax.swing.JTextField();
+        four = new javax.swing.JTextField();
+        five = new javax.swing.JTextField();
+        playerOneRoll = new javax.swing.JButton();
+        playerTwoRoll = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
-        jTextField18 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
-        jTextField19 = new javax.swing.JTextField();
-        jButton5 = new javax.swing.JButton();
-        jTextField20 = new javax.swing.JTextField();
-        jButton6 = new javax.swing.JButton();
-        jTextField21 = new javax.swing.JTextField();
-        jButton7 = new javax.swing.JButton();
-        jTextField22 = new javax.swing.JTextField();
-        jButton8 = new javax.swing.JButton();
-        jTextField23 = new javax.swing.JTextField();
-        jButton9 = new javax.swing.JButton();
-        jTextField24 = new javax.swing.JTextField();
-        jButton10 = new javax.swing.JButton();
-        jTextField25 = new javax.swing.JTextField();
-        jButton11 = new javax.swing.JButton();
-        jTextField26 = new javax.swing.JTextField();
-        jButton12 = new javax.swing.JButton();
-        jTextField27 = new javax.swing.JTextField();
-        jButton13 = new javax.swing.JButton();
-        jTextField28 = new javax.swing.JTextField();
-        jButton14 = new javax.swing.JButton();
-        jTextField29 = new javax.swing.JTextField();
-        jButton15 = new javax.swing.JButton();
-        jTextField30 = new javax.swing.JTextField();
-        jButton16 = new javax.swing.JButton();
-        jTextField7 = new javax.swing.JTextField();
-        jButton17 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jButton19 = new javax.swing.JButton();
-        jTextField10 = new javax.swing.JTextField();
-        jButton20 = new javax.swing.JButton();
-        jTextField11 = new javax.swing.JTextField();
-        jButton21 = new javax.swing.JButton();
-        jTextField12 = new javax.swing.JTextField();
-        jButton22 = new javax.swing.JButton();
-        jTextField13 = new javax.swing.JTextField();
-        jButton23 = new javax.swing.JButton();
-        jTextField14 = new javax.swing.JTextField();
-        jButton24 = new javax.swing.JButton();
-        jTextField15 = new javax.swing.JTextField();
-        jButton25 = new javax.swing.JButton();
-        jTextField16 = new javax.swing.JTextField();
-        jButton26 = new javax.swing.JButton();
-        jTextField17 = new javax.swing.JTextField();
-        jButton27 = new javax.swing.JButton();
-        jTextField31 = new javax.swing.JTextField();
-        jButton28 = new javax.swing.JButton();
-        jTextField32 = new javax.swing.JTextField();
-        jButton29 = new javax.swing.JButton();
-        jTextField33 = new javax.swing.JTextField();
-        jButton30 = new javax.swing.JButton();
+        playerOneAcesOut = new javax.swing.JTextField();
+        playerOneAces = new javax.swing.JButton();
+        playerOneTwosOut = new javax.swing.JTextField();
+        playerOneTwos = new javax.swing.JButton();
+        playerOneThreesOut = new javax.swing.JTextField();
+        playerOneThrees = new javax.swing.JButton();
+        playerOneFoursOut = new javax.swing.JTextField();
+        playerOneFours = new javax.swing.JButton();
+        playerOneFivesOut = new javax.swing.JTextField();
+        playerOneFives = new javax.swing.JButton();
+        playerOneSixesOut = new javax.swing.JTextField();
+        playerOneSixes = new javax.swing.JButton();
+        playerTwoAcesOut = new javax.swing.JTextField();
+        playerTwoAces = new javax.swing.JButton();
+        playerTwoTwosOut = new javax.swing.JTextField();
+        playerTwoTwos = new javax.swing.JButton();
+        playerTwoThreesOut = new javax.swing.JTextField();
+        playerTwoThrees = new javax.swing.JButton();
+        playerTwoFoursOut = new javax.swing.JTextField();
+        playerTwoFours = new javax.swing.JButton();
+        playerTwoFivesOut = new javax.swing.JTextField();
+        playerTwoFives = new javax.swing.JButton();
+        playerTwoSixesOut = new javax.swing.JTextField();
+        playerTwoSixes = new javax.swing.JButton();
+        playerOne3okOut = new javax.swing.JTextField();
+        playerOne3ok = new javax.swing.JButton();
+        playerOne4ok = new javax.swing.JButton();
+        playerOne4okOut = new javax.swing.JTextField();
+        playerOneFullHouseOut = new javax.swing.JTextField();
+        playerOneFullHouse = new javax.swing.JButton();
+        playerOneSmallStraightOut = new javax.swing.JTextField();
+        playerOneSmallStraight = new javax.swing.JButton();
+        playerOneLargeStraightOut = new javax.swing.JTextField();
+        playerOneLargeStraight = new javax.swing.JButton();
+        playerOneChanceOut = new javax.swing.JTextField();
+        playerOneChance = new javax.swing.JButton();
+        playerOneYahtzeeOut = new javax.swing.JTextField();
+        playerOneYahtzee = new javax.swing.JButton();
+        playerTwo3okOut = new javax.swing.JTextField();
+        playerTwo3ok = new javax.swing.JButton();
+        playerTwo4okOut = new javax.swing.JTextField();
+        playerTwo4ok = new javax.swing.JButton();
+        playerTwoFullHouseOut = new javax.swing.JTextField();
+        playerTwoFullHouse = new javax.swing.JButton();
+        playerTwoSmallStraightOut = new javax.swing.JTextField();
+        playerTwoSmallStraight = new javax.swing.JButton();
+        playerTwoLargeStraightOut = new javax.swing.JTextField();
+        playerTwoLargeStraight = new javax.swing.JButton();
+        playerTwoYahtzeeOut = new javax.swing.JTextField();
+        playerTwoYahtzee = new javax.swing.JButton();
+        playerTwoChanceOut = new javax.swing.JTextField();
+        playerTwoChance = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("0");
+        one.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        one.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        one.setText("0");
 
-        jTextField2.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField2.setText("0");
+        two.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        two.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        two.setText("0");
 
-        jTextField3.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField3.setText("0");
+        three.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        three.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        three.setText("0");
 
-        jTextField4.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField4.setText("0");
+        four.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        four.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        four.setText("0");
 
-        jTextField5.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jTextField5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField5.setText("0");
+        five.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        five.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        five.setText("0");
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jButton1.setText("Roll 3");
+        playerOneRoll.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        playerOneRoll.setText("Roll 3");
+        playerOneRoll.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playerOneRollActionPerformed(evt);
+            }
+        });
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jButton2.setText("Roll 3");
+        playerTwoRoll.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        playerTwoRoll.setText("Roll 3");
+        playerTwoRoll.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playerTwoRollActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setText("Player 1");
@@ -129,201 +212,192 @@ public class GUI extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel2.setText("Player 2");
 
-        jTextField6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField6.setText("0");
+        playerOneAcesOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        playerOneAcesOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        playerOneAcesOut.setText("0");
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton3.setText("Aces");
+        playerOneAces.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        playerOneAces.setText("Aces");
+        playerOneAces.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playerOneAcesActionPerformed(evt);
+            }
+        });
 
-        jTextField18.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextField18.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField18.setText("0");
+        playerOneTwosOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        playerOneTwosOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        playerOneTwosOut.setText("0");
 
-        jButton4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton4.setText("Ones");
+        playerOneTwos.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        playerOneTwos.setText("Twos");
 
-        jTextField19.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextField19.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField19.setText("0");
+        playerOneThreesOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        playerOneThreesOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        playerOneThreesOut.setText("0");
 
-        jButton5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton5.setText("Twos");
+        playerOneThrees.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        playerOneThrees.setText("Threes");
 
-        jTextField20.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextField20.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField20.setText("0");
+        playerOneFoursOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        playerOneFoursOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        playerOneFoursOut.setText("0");
 
-        jButton6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton6.setText("Threes");
+        playerOneFours.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        playerOneFours.setText("Fours");
 
-        jTextField21.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextField21.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField21.setText("0");
+        playerOneFivesOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        playerOneFivesOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        playerOneFivesOut.setText("0");
 
-        jButton7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton7.setText("Fours");
+        playerOneFives.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        playerOneFives.setText("Fives");
 
-        jTextField22.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextField22.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField22.setText("0");
+        playerOneSixesOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        playerOneSixesOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        playerOneSixesOut.setText("0");
 
-        jButton8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton8.setText("Fives");
+        playerOneSixes.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        playerOneSixes.setText("Sixes");
 
-        jTextField23.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextField23.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField23.setText("0");
+        playerTwoAcesOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        playerTwoAcesOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        playerTwoAcesOut.setText("0");
 
-        jButton9.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton9.setText("Sixes");
+        playerTwoAces.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        playerTwoAces.setText("Aces");
 
-        jTextField24.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextField24.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField24.setText("0");
+        playerTwoTwosOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        playerTwoTwosOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        playerTwoTwosOut.setText("0");
 
-        jButton10.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton10.setText("Aces");
+        playerTwoTwos.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        playerTwoTwos.setText("Twos");
 
-        jTextField25.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextField25.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField25.setText("0");
+        playerTwoThreesOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        playerTwoThreesOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        playerTwoThreesOut.setText("0");
 
-        jButton11.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton11.setText("Ones");
+        playerTwoThrees.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        playerTwoThrees.setText("Threes");
 
-        jTextField26.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextField26.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField26.setText("0");
+        playerTwoFoursOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        playerTwoFoursOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        playerTwoFoursOut.setText("0");
 
-        jButton12.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton12.setText("Twos");
+        playerTwoFours.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        playerTwoFours.setText("Fours");
 
-        jTextField27.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextField27.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField27.setText("0");
+        playerTwoFivesOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        playerTwoFivesOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        playerTwoFivesOut.setText("0");
 
-        jButton13.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton13.setText("Threes");
+        playerTwoFives.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        playerTwoFives.setText("Fives");
 
-        jTextField28.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextField28.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField28.setText("0");
+        playerTwoSixesOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        playerTwoSixesOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        playerTwoSixesOut.setText("0");
 
-        jButton14.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton14.setText("Fours");
+        playerTwoSixes.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        playerTwoSixes.setText("Sixes");
 
-        jTextField29.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextField29.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField29.setText("0");
+        playerOne3okOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        playerOne3okOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        playerOne3okOut.setText("0");
 
-        jButton15.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton15.setText("Fives");
+        playerOne3ok.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        playerOne3ok.setText("3 of a Kind");
 
-        jTextField30.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextField30.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField30.setText("0");
+        playerOne4ok.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        playerOne4ok.setText("4 of a Kind");
 
-        jButton16.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton16.setText("Sixes");
+        playerOne4okOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        playerOne4okOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        playerOne4okOut.setText("0");
 
-        jTextField7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextField7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField7.setText("0");
+        playerOneFullHouseOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        playerOneFullHouseOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        playerOneFullHouseOut.setText("0");
 
-        jButton17.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton17.setText("3 of a Kind");
+        playerOneFullHouse.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        playerOneFullHouse.setText("Full House");
 
-        jButton18.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton18.setText("4 of a Kind");
+        playerOneSmallStraightOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        playerOneSmallStraightOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        playerOneSmallStraightOut.setText("0");
 
-        jTextField8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextField8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField8.setText("0");
+        playerOneSmallStraight.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        playerOneSmallStraight.setText("sm. straight");
 
-        jTextField9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextField9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField9.setText("0");
+        playerOneLargeStraightOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        playerOneLargeStraightOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        playerOneLargeStraightOut.setText("0");
 
-        jButton19.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton19.setText("Full House");
+        playerOneLargeStraight.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        playerOneLargeStraight.setText("lg. straight");
 
-        jTextField10.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextField10.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField10.setText("0");
+        playerOneChanceOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        playerOneChanceOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        playerOneChanceOut.setText("0");
 
-        jButton20.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton20.setText("sm. straight");
+        playerOneChance.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        playerOneChance.setText("Chance");
 
-        jTextField11.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextField11.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField11.setText("0");
+        playerOneYahtzeeOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        playerOneYahtzeeOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        playerOneYahtzeeOut.setText("0");
 
-        jButton21.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton21.setText("lg. straight");
+        playerOneYahtzee.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        playerOneYahtzee.setText("Yahtzee");
 
-        jTextField12.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextField12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField12.setText("0");
+        playerTwo3okOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        playerTwo3okOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        playerTwo3okOut.setText("0");
 
-        jButton22.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton22.setText("Chance");
+        playerTwo3ok.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        playerTwo3ok.setText("3 of a Kind");
 
-        jTextField13.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextField13.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField13.setText("0");
+        playerTwo4okOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        playerTwo4okOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        playerTwo4okOut.setText("0");
 
-        jButton23.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton23.setText("Yahtzee");
+        playerTwo4ok.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        playerTwo4ok.setText("4 of a Kind");
 
-        jTextField14.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextField14.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField14.setText("0");
+        playerTwoFullHouseOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        playerTwoFullHouseOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        playerTwoFullHouseOut.setText("0");
 
-        jButton24.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton24.setText("3 of a Kind");
+        playerTwoFullHouse.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        playerTwoFullHouse.setText("Full House");
 
-        jTextField15.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextField15.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField15.setText("0");
+        playerTwoSmallStraightOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        playerTwoSmallStraightOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        playerTwoSmallStraightOut.setText("0");
 
-        jButton25.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton25.setText("4 of a Kind");
+        playerTwoSmallStraight.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        playerTwoSmallStraight.setText("sm. straight");
 
-        jTextField16.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextField16.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField16.setText("0");
+        playerTwoLargeStraightOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        playerTwoLargeStraightOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        playerTwoLargeStraightOut.setText("0");
 
-        jButton26.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton26.setText("Full House");
+        playerTwoLargeStraight.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        playerTwoLargeStraight.setText("lg. straight");
 
-        jTextField17.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextField17.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField17.setText("0");
+        playerTwoYahtzeeOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        playerTwoYahtzeeOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        playerTwoYahtzeeOut.setText("0");
 
-        jButton27.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton27.setText("sm. straight");
+        playerTwoYahtzee.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        playerTwoYahtzee.setText("Yahtzee");
 
-        jTextField31.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextField31.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField31.setText("0");
+        playerTwoChanceOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        playerTwoChanceOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        playerTwoChanceOut.setText("0");
 
-        jButton28.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton28.setText("lg. straight");
-
-        jTextField32.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextField32.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField32.setText("0");
-
-        jButton29.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton29.setText("Yahtzee");
-
-        jTextField33.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextField33.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField33.setText("0");
-
-        jButton30.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton30.setText("Chance");
+        playerTwoChance.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        playerTwoChance.setText("Chance");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -333,142 +407,136 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(playerOneRoll, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(playerTwoRoll, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField6))
+                                    .addComponent(playerOneAces, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(playerOneAcesOut))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(playerOneTwos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(playerOneTwosOut, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(playerOneThrees, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(playerOneThreesOut, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField20))
+                                    .addComponent(playerOneFours, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(playerOneFoursOut))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(playerOneFives, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(playerOneFivesOut, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jLabel1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(playerOneSixes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(playerOneSixesOut, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(one, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(two, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(three, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(four, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(five, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel2))
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(318, 318, 318)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 171, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(playerTwoAces, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(playerTwoAcesOut, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(playerTwoTwos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(playerTwoTwosOut, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField26, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(playerTwoThrees, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(playerTwoThreesOut, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(playerTwoFours, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(playerTwoFoursOut, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(playerTwoFives, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(playerTwoFivesOut, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(playerTwoSixes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(playerTwoSixesOut, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jButton22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(playerOneChance, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(playerOneChanceOut, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField7))
+                                    .addComponent(playerOne3ok, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(playerOne3okOut))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(playerOne4ok, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(playerOne4okOut, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(playerOneFullHouse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(playerOneFullHouseOut, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField10))
+                                    .addComponent(playerOneSmallStraight, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(playerOneSmallStraightOut))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(playerOneLargeStraight, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(playerOneLargeStraightOut, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jButton23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(playerOneYahtzee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(playerOneYahtzeeOut, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 291, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jButton30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextField33, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(playerTwoChance, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(playerTwoChanceOut, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(playerTwo3ok, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(playerTwo3okOut, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(playerTwo4ok, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(playerTwo4okOut, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(playerTwoFullHouse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(playerTwoFullHouseOut, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(playerTwoSmallStraight, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(playerTwoSmallStraightOut, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(playerTwoLargeStraight, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(playerTwoLargeStraightOut, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jButton29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextField32, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(playerTwoYahtzee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(playerTwoYahtzeeOut, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -476,141 +544,133 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(110, 110, 110)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(one, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(two, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(three, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(four, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(five, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(playerOneRoll, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(playerTwoRoll, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(58, 58, 58)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(playerOneAcesOut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(playerOneAces, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(playerOneTwosOut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(playerOneTwos, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(playerOneThreesOut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(playerOneThrees, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(playerOneFoursOut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(playerOneFours, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(playerOneFivesOut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(playerOneFives, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(playerOneSixesOut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(playerOneSixes, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(playerTwoAcesOut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(playerTwoAces, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(playerTwoTwosOut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(playerTwoTwos, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(playerTwoThreesOut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(playerTwoThrees, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextField26, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(playerTwoFoursOut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(playerTwoFours, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(playerTwoFivesOut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(playerTwoFives, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(playerTwoSixesOut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(playerTwoSixes, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(playerOne3okOut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(playerOne3ok, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(playerOne4okOut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(playerOne4ok, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(playerOneFullHouseOut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(playerOneFullHouse, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(playerOneSmallStraightOut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(playerOneSmallStraight, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(playerOneLargeStraightOut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(playerOneLargeStraight, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(playerOneChanceOut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(playerOneChance, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(playerOneYahtzeeOut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(playerOneYahtzee, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(playerTwo3okOut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton24, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(playerTwo3ok, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(playerTwo4okOut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(playerTwo4ok, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(playerTwoFullHouseOut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton26, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(playerTwoFullHouse, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(playerTwoSmallStraightOut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton27, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(playerTwoSmallStraight, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(playerTwoLargeStraightOut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(playerTwoLargeStraight, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTextField33, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(playerTwoChanceOut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton30, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(playerTwoChance, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTextField32, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(playerTwoYahtzeeOut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton29, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(playerTwoYahtzee, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
@@ -631,6 +691,80 @@ public class GUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void playerOneRollActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerOneRollActionPerformed
+        
+        if(rollCount == 1)
+        {
+            playerOneRoll.setEnabled(false);
+            playerTwoRoll.setEnabled(true);
+            rollCount = 3;
+            playerOneRoll.setText("Roll 3");
+        }
+        else
+        {
+        playerTwoRoll.setEnabled(false);
+        
+        one.setText(String.valueOf(random.nextInt(7)));
+        two.setText(String.valueOf(random.nextInt(7)));
+        three.setText(String.valueOf(random.nextInt(7)));
+        four.setText(String.valueOf(random.nextInt(7)));
+        five.setText(String.valueOf(random.nextInt(7)));
+        rollCount = rollCount - 1;
+        playerOneRoll.setText("Roll "+rollCount);
+        
+        oneReg = Integer.parseInt(one.getText());
+        twoReg = Integer.parseInt(two.getText());
+        threeReg = Integer.parseInt(three.getText());
+        fourReg = Integer.parseInt(four.getText());
+        fiveReg = Integer.parseInt(five.getText());
+        
+        if(onesCheck() == true)
+        {
+            playerOneAces.setEnabled(true);
+        }
+        if(onesCheck() == false)
+        {
+            playerOneAces.setEnabled(false);
+        }
+        }
+        
+    }//GEN-LAST:event_playerOneRollActionPerformed
+
+    private void playerTwoRollActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerTwoRollActionPerformed
+        
+        if(rollCount == 1)
+        {
+            playerOneRoll.setEnabled(true);
+            playerTwoRoll.setEnabled(false);
+            rollCount = 3;
+            playerTwoRoll.setText("Roll 3");
+        }
+        else
+        {
+        playerTwoRoll.setEnabled(true);
+        
+        one.setText(String.valueOf(random.nextInt(7)));
+        two.setText(String.valueOf(random.nextInt(7)));
+        three.setText(String.valueOf(random.nextInt(7)));
+        four.setText(String.valueOf(random.nextInt(7)));
+        five.setText(String.valueOf(random.nextInt(7)));
+        rollCount = rollCount - 1;
+        playerTwoRoll.setText("Roll "+rollCount);
+        }
+    }//GEN-LAST:event_playerTwoRollActionPerformed
+
+    private void playerOneAcesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerOneAcesActionPerformed
+        
+        oneReg = Integer.parseInt(one.getText());
+        twoReg = Integer.parseInt(two.getText());
+        threeReg = Integer.parseInt(three.getText());
+        fourReg = Integer.parseInt(four.getText());
+        fiveReg = Integer.parseInt(five.getText());
+        
+        
+        
+    }//GEN-LAST:event_playerOneAcesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -668,71 +802,67 @@ public class GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton22;
-    private javax.swing.JButton jButton23;
-    private javax.swing.JButton jButton24;
-    private javax.swing.JButton jButton25;
-    private javax.swing.JButton jButton26;
-    private javax.swing.JButton jButton27;
-    private javax.swing.JButton jButton28;
-    private javax.swing.JButton jButton29;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton30;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JTextField five;
+    private javax.swing.JTextField four;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField20;
-    private javax.swing.JTextField jTextField21;
-    private javax.swing.JTextField jTextField22;
-    private javax.swing.JTextField jTextField23;
-    private javax.swing.JTextField jTextField24;
-    private javax.swing.JTextField jTextField25;
-    private javax.swing.JTextField jTextField26;
-    private javax.swing.JTextField jTextField27;
-    private javax.swing.JTextField jTextField28;
-    private javax.swing.JTextField jTextField29;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField30;
-    private javax.swing.JTextField jTextField31;
-    private javax.swing.JTextField jTextField32;
-    private javax.swing.JTextField jTextField33;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField one;
+    private javax.swing.JButton playerOne3ok;
+    private javax.swing.JTextField playerOne3okOut;
+    private javax.swing.JButton playerOne4ok;
+    private javax.swing.JTextField playerOne4okOut;
+    private javax.swing.JButton playerOneAces;
+    private javax.swing.JTextField playerOneAcesOut;
+    private javax.swing.JButton playerOneChance;
+    private javax.swing.JTextField playerOneChanceOut;
+    private javax.swing.JButton playerOneFives;
+    private javax.swing.JTextField playerOneFivesOut;
+    private javax.swing.JButton playerOneFours;
+    private javax.swing.JTextField playerOneFoursOut;
+    private javax.swing.JButton playerOneFullHouse;
+    private javax.swing.JTextField playerOneFullHouseOut;
+    private javax.swing.JButton playerOneLargeStraight;
+    private javax.swing.JTextField playerOneLargeStraightOut;
+    private javax.swing.JButton playerOneRoll;
+    private javax.swing.JButton playerOneSixes;
+    private javax.swing.JTextField playerOneSixesOut;
+    private javax.swing.JButton playerOneSmallStraight;
+    private javax.swing.JTextField playerOneSmallStraightOut;
+    private javax.swing.JButton playerOneThrees;
+    private javax.swing.JTextField playerOneThreesOut;
+    private javax.swing.JButton playerOneTwos;
+    private javax.swing.JTextField playerOneTwosOut;
+    private javax.swing.JButton playerOneYahtzee;
+    private javax.swing.JTextField playerOneYahtzeeOut;
+    private javax.swing.JButton playerTwo3ok;
+    private javax.swing.JTextField playerTwo3okOut;
+    private javax.swing.JButton playerTwo4ok;
+    private javax.swing.JTextField playerTwo4okOut;
+    private javax.swing.JButton playerTwoAces;
+    private javax.swing.JTextField playerTwoAcesOut;
+    private javax.swing.JButton playerTwoChance;
+    private javax.swing.JTextField playerTwoChanceOut;
+    private javax.swing.JButton playerTwoFives;
+    private javax.swing.JTextField playerTwoFivesOut;
+    private javax.swing.JButton playerTwoFours;
+    private javax.swing.JTextField playerTwoFoursOut;
+    private javax.swing.JButton playerTwoFullHouse;
+    private javax.swing.JTextField playerTwoFullHouseOut;
+    private javax.swing.JButton playerTwoLargeStraight;
+    private javax.swing.JTextField playerTwoLargeStraightOut;
+    private javax.swing.JButton playerTwoRoll;
+    private javax.swing.JButton playerTwoSixes;
+    private javax.swing.JTextField playerTwoSixesOut;
+    private javax.swing.JButton playerTwoSmallStraight;
+    private javax.swing.JTextField playerTwoSmallStraightOut;
+    private javax.swing.JButton playerTwoThrees;
+    private javax.swing.JTextField playerTwoThreesOut;
+    private javax.swing.JButton playerTwoTwos;
+    private javax.swing.JTextField playerTwoTwosOut;
+    private javax.swing.JButton playerTwoYahtzee;
+    private javax.swing.JTextField playerTwoYahtzeeOut;
+    private javax.swing.JTextField three;
+    private javax.swing.JTextField two;
     // End of variables declaration//GEN-END:variables
 }
