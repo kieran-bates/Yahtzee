@@ -401,6 +401,7 @@
       <SubComponents>
         <Component class="javax.swing.JTextField" name="one">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="36" style="0"/>
             </Property>
@@ -410,6 +411,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="two">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="36" style="0"/>
             </Property>
@@ -419,6 +421,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="three">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="36" style="0"/>
             </Property>
@@ -428,6 +431,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="four">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="36" style="0"/>
             </Property>
@@ -437,6 +441,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="five">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="36" style="0"/>
             </Property>
@@ -484,6 +489,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="playerOneAcesOut">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="0"/>
             </Property>
@@ -504,6 +510,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="playerOneTwosOut">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="0"/>
             </Property>
@@ -518,9 +525,13 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Twos"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="playerOneTwosActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="playerOneThreesOut">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="0"/>
             </Property>
@@ -535,9 +546,13 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Threes"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="playerOneThreesActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="playerOneFoursOut">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="0"/>
             </Property>
@@ -552,9 +567,13 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Fours"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="playerOneFoursActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="playerOneFivesOut">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="0"/>
             </Property>
@@ -569,9 +588,13 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Fives"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="playerOneFivesActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="playerOneSixesOut">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="0"/>
             </Property>
@@ -586,9 +609,13 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Sixes"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="playerOneSixesActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="playerTwoAcesOut">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="0"/>
             </Property>
@@ -603,9 +630,13 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Aces"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="playerTwoAcesActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="playerTwoTwosOut">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="0"/>
             </Property>
@@ -620,9 +651,13 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Twos"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="playerTwoTwosActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="playerTwoThreesOut">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="0"/>
             </Property>
@@ -637,9 +672,13 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Threes"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="playerTwoThreesActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="playerTwoFoursOut">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="0"/>
             </Property>
@@ -654,9 +693,13 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Fours"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="playerTwoFoursActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="playerTwoFivesOut">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="0"/>
             </Property>
@@ -671,9 +714,13 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Fives"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="playerTwoFivesActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="playerTwoSixesOut">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="0"/>
             </Property>
@@ -688,9 +735,13 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Sixes"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="playerTwoSixesActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="playerOne3okOut">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="0"/>
             </Property>
@@ -716,6 +767,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="playerOne4okOut">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="0"/>
             </Property>
@@ -725,6 +777,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="playerOneFullHouseOut">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="0"/>
             </Property>
@@ -742,6 +795,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="playerOneSmallStraightOut">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="0"/>
             </Property>
@@ -759,6 +813,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="playerOneLargeStraightOut">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="0"/>
             </Property>
@@ -776,6 +831,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="playerOneChanceOut">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="0"/>
             </Property>
@@ -793,6 +849,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="playerOneYahtzeeOut">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="0"/>
             </Property>
@@ -810,6 +867,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="playerTwo3okOut">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="0"/>
             </Property>
@@ -827,6 +885,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="playerTwo4okOut">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="0"/>
             </Property>
@@ -844,6 +903,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="playerTwoFullHouseOut">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="0"/>
             </Property>
@@ -861,6 +921,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="playerTwoSmallStraightOut">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="0"/>
             </Property>
@@ -878,6 +939,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="playerTwoLargeStraightOut">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="0"/>
             </Property>
@@ -895,6 +957,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="playerTwoYahtzeeOut">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="0"/>
             </Property>
@@ -912,6 +975,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="playerTwoChanceOut">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="0"/>
             </Property>

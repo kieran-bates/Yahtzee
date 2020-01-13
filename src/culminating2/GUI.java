@@ -96,6 +96,18 @@ public class GUI extends javax.swing.JFrame {
     int fourReg;
     int fiveReg;
     
+    int playerOneAcesScore = 0;
+    int playerOneTwosScore = 0;
+    int playerOneThreesScore = 0;
+    int playerOneFoursScore = 0;
+    int playerOneFivesScore = 0;
+    int playerOneSixesScore = 0;
+    int playerTwoAcesScore = 0;
+    int playerTwoTwosScore = 0;
+    int playerTwoThreesScore = 0;
+    int playerTwoFoursScore = 0;
+    int playerTwoFivesScore = 0;
+    int playerTwoSixesScore = 0;
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -170,22 +182,27 @@ public class GUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        one.setEditable(false);
         one.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         one.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         one.setText("0");
 
+        two.setEditable(false);
         two.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         two.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         two.setText("0");
 
+        three.setEditable(false);
         three.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         three.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         three.setText("0");
 
+        four.setEditable(false);
         four.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         four.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         four.setText("0");
 
+        five.setEditable(false);
         five.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         five.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         five.setText("0");
@@ -212,6 +229,7 @@ public class GUI extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel2.setText("Player 2");
 
+        playerOneAcesOut.setEditable(false);
         playerOneAcesOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         playerOneAcesOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         playerOneAcesOut.setText("0");
@@ -224,83 +242,150 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        playerOneTwosOut.setEditable(false);
         playerOneTwosOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         playerOneTwosOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         playerOneTwosOut.setText("0");
 
         playerOneTwos.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerOneTwos.setText("Twos");
+        playerOneTwos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playerOneTwosActionPerformed(evt);
+            }
+        });
 
+        playerOneThreesOut.setEditable(false);
         playerOneThreesOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         playerOneThreesOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         playerOneThreesOut.setText("0");
 
         playerOneThrees.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerOneThrees.setText("Threes");
+        playerOneThrees.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playerOneThreesActionPerformed(evt);
+            }
+        });
 
+        playerOneFoursOut.setEditable(false);
         playerOneFoursOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         playerOneFoursOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         playerOneFoursOut.setText("0");
 
         playerOneFours.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerOneFours.setText("Fours");
+        playerOneFours.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playerOneFoursActionPerformed(evt);
+            }
+        });
 
+        playerOneFivesOut.setEditable(false);
         playerOneFivesOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         playerOneFivesOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         playerOneFivesOut.setText("0");
 
         playerOneFives.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerOneFives.setText("Fives");
+        playerOneFives.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playerOneFivesActionPerformed(evt);
+            }
+        });
 
+        playerOneSixesOut.setEditable(false);
         playerOneSixesOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         playerOneSixesOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         playerOneSixesOut.setText("0");
 
         playerOneSixes.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerOneSixes.setText("Sixes");
+        playerOneSixes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playerOneSixesActionPerformed(evt);
+            }
+        });
 
+        playerTwoAcesOut.setEditable(false);
         playerTwoAcesOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         playerTwoAcesOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         playerTwoAcesOut.setText("0");
 
         playerTwoAces.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerTwoAces.setText("Aces");
+        playerTwoAces.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playerTwoAcesActionPerformed(evt);
+            }
+        });
 
+        playerTwoTwosOut.setEditable(false);
         playerTwoTwosOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         playerTwoTwosOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         playerTwoTwosOut.setText("0");
 
         playerTwoTwos.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerTwoTwos.setText("Twos");
+        playerTwoTwos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playerTwoTwosActionPerformed(evt);
+            }
+        });
 
+        playerTwoThreesOut.setEditable(false);
         playerTwoThreesOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         playerTwoThreesOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         playerTwoThreesOut.setText("0");
 
         playerTwoThrees.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerTwoThrees.setText("Threes");
+        playerTwoThrees.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playerTwoThreesActionPerformed(evt);
+            }
+        });
 
+        playerTwoFoursOut.setEditable(false);
         playerTwoFoursOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         playerTwoFoursOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         playerTwoFoursOut.setText("0");
 
         playerTwoFours.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerTwoFours.setText("Fours");
+        playerTwoFours.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playerTwoFoursActionPerformed(evt);
+            }
+        });
 
+        playerTwoFivesOut.setEditable(false);
         playerTwoFivesOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         playerTwoFivesOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         playerTwoFivesOut.setText("0");
 
         playerTwoFives.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerTwoFives.setText("Fives");
+        playerTwoFives.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playerTwoFivesActionPerformed(evt);
+            }
+        });
 
+        playerTwoSixesOut.setEditable(false);
         playerTwoSixesOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         playerTwoSixesOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         playerTwoSixesOut.setText("0");
 
         playerTwoSixes.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerTwoSixes.setText("Sixes");
+        playerTwoSixes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playerTwoSixesActionPerformed(evt);
+            }
+        });
 
+        playerOne3okOut.setEditable(false);
         playerOne3okOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         playerOne3okOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         playerOne3okOut.setText("0");
@@ -311,10 +396,12 @@ public class GUI extends javax.swing.JFrame {
         playerOne4ok.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerOne4ok.setText("4 of a Kind");
 
+        playerOne4okOut.setEditable(false);
         playerOne4okOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         playerOne4okOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         playerOne4okOut.setText("0");
 
+        playerOneFullHouseOut.setEditable(false);
         playerOneFullHouseOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         playerOneFullHouseOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         playerOneFullHouseOut.setText("0");
@@ -322,6 +409,7 @@ public class GUI extends javax.swing.JFrame {
         playerOneFullHouse.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerOneFullHouse.setText("Full House");
 
+        playerOneSmallStraightOut.setEditable(false);
         playerOneSmallStraightOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         playerOneSmallStraightOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         playerOneSmallStraightOut.setText("0");
@@ -329,6 +417,7 @@ public class GUI extends javax.swing.JFrame {
         playerOneSmallStraight.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerOneSmallStraight.setText("sm. straight");
 
+        playerOneLargeStraightOut.setEditable(false);
         playerOneLargeStraightOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         playerOneLargeStraightOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         playerOneLargeStraightOut.setText("0");
@@ -336,6 +425,7 @@ public class GUI extends javax.swing.JFrame {
         playerOneLargeStraight.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerOneLargeStraight.setText("lg. straight");
 
+        playerOneChanceOut.setEditable(false);
         playerOneChanceOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         playerOneChanceOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         playerOneChanceOut.setText("0");
@@ -343,6 +433,7 @@ public class GUI extends javax.swing.JFrame {
         playerOneChance.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerOneChance.setText("Chance");
 
+        playerOneYahtzeeOut.setEditable(false);
         playerOneYahtzeeOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         playerOneYahtzeeOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         playerOneYahtzeeOut.setText("0");
@@ -350,6 +441,7 @@ public class GUI extends javax.swing.JFrame {
         playerOneYahtzee.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerOneYahtzee.setText("Yahtzee");
 
+        playerTwo3okOut.setEditable(false);
         playerTwo3okOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         playerTwo3okOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         playerTwo3okOut.setText("0");
@@ -357,6 +449,7 @@ public class GUI extends javax.swing.JFrame {
         playerTwo3ok.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerTwo3ok.setText("3 of a Kind");
 
+        playerTwo4okOut.setEditable(false);
         playerTwo4okOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         playerTwo4okOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         playerTwo4okOut.setText("0");
@@ -364,6 +457,7 @@ public class GUI extends javax.swing.JFrame {
         playerTwo4ok.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerTwo4ok.setText("4 of a Kind");
 
+        playerTwoFullHouseOut.setEditable(false);
         playerTwoFullHouseOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         playerTwoFullHouseOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         playerTwoFullHouseOut.setText("0");
@@ -371,6 +465,7 @@ public class GUI extends javax.swing.JFrame {
         playerTwoFullHouse.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerTwoFullHouse.setText("Full House");
 
+        playerTwoSmallStraightOut.setEditable(false);
         playerTwoSmallStraightOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         playerTwoSmallStraightOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         playerTwoSmallStraightOut.setText("0");
@@ -378,6 +473,7 @@ public class GUI extends javax.swing.JFrame {
         playerTwoSmallStraight.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerTwoSmallStraight.setText("sm. straight");
 
+        playerTwoLargeStraightOut.setEditable(false);
         playerTwoLargeStraightOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         playerTwoLargeStraightOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         playerTwoLargeStraightOut.setText("0");
@@ -385,6 +481,7 @@ public class GUI extends javax.swing.JFrame {
         playerTwoLargeStraight.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerTwoLargeStraight.setText("lg. straight");
 
+        playerTwoYahtzeeOut.setEditable(false);
         playerTwoYahtzeeOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         playerTwoYahtzeeOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         playerTwoYahtzeeOut.setText("0");
@@ -392,6 +489,7 @@ public class GUI extends javax.swing.JFrame {
         playerTwoYahtzee.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerTwoYahtzee.setText("Yahtzee");
 
+        playerTwoChanceOut.setEditable(false);
         playerTwoChanceOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         playerTwoChanceOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         playerTwoChanceOut.setText("0");
@@ -694,12 +792,29 @@ public class GUI extends javax.swing.JFrame {
 
     private void playerOneRollActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerOneRollActionPerformed
         
-        if(rollCount == 1)
+        if(rollCount == 0)
         {
             playerOneRoll.setEnabled(false);
             playerTwoRoll.setEnabled(true);
+            playerTwoAces.setEnabled(true);
+            playerTwoTwos.setEnabled(true);
+            playerTwoThrees.setEnabled(true);
+            playerTwoFours.setEnabled(true);
+            playerTwoFives.setEnabled(true);
+            playerTwoSixes.setEnabled(true);
+            playerOneAces.setEnabled(false);
+            playerOneTwos.setEnabled(false);
+            playerOneThrees.setEnabled(false);
+            playerOneFours.setEnabled(false);
+            playerOneFives.setEnabled(false);
+            playerOneSixes.setEnabled(false);
             rollCount = 3;
             playerOneRoll.setText("Roll 3");
+            one.setText("0");
+            two.setText("0");
+            three.setText("0");
+            four.setText("0");
+            five.setText("0");
         }
         else
         {
@@ -727,18 +842,75 @@ public class GUI extends javax.swing.JFrame {
         {
             playerOneAces.setEnabled(false);
         }
+        if(twosCheck() == true)
+        {
+            playerOneTwos.setEnabled(true);
+        }
+        if(twosCheck() == false)
+        {
+            playerOneTwos.setEnabled(false);
+        }
+        if(threesCheck() == true)
+        {
+            playerOneThrees.setEnabled(true);
+        }
+        if(threesCheck() == false)
+        {
+            playerOneThrees.setEnabled(false);
+        }
+        if(foursCheck() == true)
+        {
+            playerOneFours.setEnabled(true);
+        }
+        if(foursCheck() == false)
+        {
+            playerOneFours.setEnabled(false);
+        }
+        if(fivesCheck() == true)
+        {
+            playerOneFives.setEnabled(true);
+        }
+        if(fivesCheck() == false)
+        {
+            playerOneFives.setEnabled(false);
+        }
+        if(sixesCheck() == true)
+        {
+            playerOneSixes.setEnabled(true);
+        }
+        if(sixesCheck() == false)
+        {
+            playerOneSixes.setEnabled(false);
+        }
         }
         
     }//GEN-LAST:event_playerOneRollActionPerformed
 
     private void playerTwoRollActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerTwoRollActionPerformed
         
-        if(rollCount == 1)
+        if(rollCount == 0)
         {
             playerOneRoll.setEnabled(true);
             playerTwoRoll.setEnabled(false);
+            playerTwoAces.setEnabled(false);
+            playerTwoTwos.setEnabled(false);
+            playerTwoThrees.setEnabled(false);
+            playerTwoFours.setEnabled(false);
+            playerTwoFives.setEnabled(false);
+            playerTwoSixes.setEnabled(false);
+            playerOneAces.setEnabled(true);
+            playerOneTwos.setEnabled(true);
+            playerOneThrees.setEnabled(true);
+            playerOneFours.setEnabled(true);
+            playerOneFives.setEnabled(true);
+            playerOneSixes.setEnabled(true);
             rollCount = 3;
             playerTwoRoll.setText("Roll 3");
+            one.setText("0");
+            two.setText("0");
+            three.setText("0");
+            four.setText("0");
+            five.setText("0");
         }
         else
         {
@@ -751,10 +923,6 @@ public class GUI extends javax.swing.JFrame {
         five.setText(String.valueOf(random.nextInt(7)));
         rollCount = rollCount - 1;
         playerTwoRoll.setText("Roll "+rollCount);
-        }
-    }//GEN-LAST:event_playerTwoRollActionPerformed
-
-    private void playerOneAcesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerOneAcesActionPerformed
         
         oneReg = Integer.parseInt(one.getText());
         twoReg = Integer.parseInt(two.getText());
@@ -762,9 +930,434 @@ public class GUI extends javax.swing.JFrame {
         fourReg = Integer.parseInt(four.getText());
         fiveReg = Integer.parseInt(five.getText());
         
+        if(onesCheck() == true)
+        {
+            playerTwoAces.setEnabled(true);
+        }
+        if(onesCheck() == false)
+        {
+            playerTwoAces.setEnabled(false);
+        }
+        if(twosCheck() == true)
+        {
+            playerTwoTwos.setEnabled(true);
+        }
+        if(twosCheck() == false)
+        {
+            playerTwoTwos.setEnabled(false);
+        }
+        if(threesCheck() == true)
+        {
+            playerTwoThrees.setEnabled(true);
+        }
+        if(threesCheck() == false)
+        {
+            playerTwoThrees.setEnabled(false);
+        }
+        if(foursCheck() == true)
+        {
+            playerTwoFours.setEnabled(true);
+        }
+        if(foursCheck() == false)
+        {
+            playerTwoFours.setEnabled(false);
+        }
+        if(fivesCheck() == true)
+        {
+            playerTwoFives.setEnabled(true);
+        }
+        if(fivesCheck() == false)
+        {
+            playerTwoFives.setEnabled(false);
+        }
+        if(sixesCheck() == true)
+        {
+            playerTwoSixes.setEnabled(true);
+        }
+        if(sixesCheck() == false)
+        {
+            playerTwoSixes.setEnabled(false);
+        }
+        }
+    }//GEN-LAST:event_playerTwoRollActionPerformed
+
+    private void playerOneAcesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerOneAcesActionPerformed
         
+        if (one.getText().equals("1"))
+        {
+            playerOneAcesScore = playerOneAcesScore+1;
+        }
+        if (two.getText().equals("1"))
+        {
+            playerOneAcesScore = playerOneAcesScore+1;
+        }
+        if (three.getText().equals("1"))
+        {
+            playerOneAcesScore = playerOneAcesScore+1;
+        }
+        if (four.getText().equals("1"))
+        {
+            playerOneAcesScore = playerOneAcesScore+1;
+        }
+        if (five.getText().equals("1"))
+        {
+            playerOneAcesScore = playerOneAcesScore+1;
+        }
         
+        playerOneAcesOut.setText(String.valueOf(playerOneAcesScore));
+        playerOneAces.setEnabled(false);
+        playerOneTwos.setEnabled(false);
+        playerOneThrees.setEnabled(false);
+        playerOneFours.setEnabled(false);
+        playerOneFives.setEnabled(false);
+        playerOneSixes.setEnabled(false);
     }//GEN-LAST:event_playerOneAcesActionPerformed
+
+    private void playerOneTwosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerOneTwosActionPerformed
+        
+        if (one.getText().equals("2"))
+        {
+            playerOneTwosScore = playerOneTwosScore+1;
+        }
+        if (two.getText().equals("2"))
+        {
+            playerOneTwosScore = playerOneTwosScore+1;
+        }
+        if (three.getText().equals("2"))
+        {
+            playerOneTwosScore = playerOneTwosScore+1;
+        }
+        if (four.getText().equals("2"))
+        {
+            playerOneTwosScore = playerOneTwosScore+1;
+        }
+        if (five.getText().equals("2"))
+        {
+            playerOneTwosScore = playerOneTwosScore+1;
+        }
+        
+        playerOneTwosOut.setText(String.valueOf(playerOneTwosScore));
+        playerOneAces.setEnabled(false);
+        playerOneTwos.setEnabled(false);
+        playerOneThrees.setEnabled(false);
+        playerOneFours.setEnabled(false);
+        playerOneFives.setEnabled(false);
+        playerOneSixes.setEnabled(false);
+    }//GEN-LAST:event_playerOneTwosActionPerformed
+
+    private void playerOneThreesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerOneThreesActionPerformed
+        
+        if (one.getText().equals("3"))
+        {
+            playerOneThreesScore = playerOneThreesScore+1;
+        }
+        if (two.getText().equals("3"))
+        {
+            playerOneThreesScore = playerOneThreesScore+1;
+        }
+        if (three.getText().equals("3"))
+        {
+            playerOneThreesScore = playerOneThreesScore+1;
+        }
+        if (four.getText().equals("3"))
+        {
+            playerOneThreesScore = playerOneThreesScore+1;
+        }
+        if (five.getText().equals("3"))
+        {
+            playerOneThreesScore = playerOneThreesScore+1;
+        }
+        
+        playerOneThreesOut.setText(String.valueOf(playerOneThreesScore));
+        playerOneAces.setEnabled(false);
+        playerOneTwos.setEnabled(false);
+        playerOneThrees.setEnabled(false);
+        playerOneFours.setEnabled(false);
+        playerOneFives.setEnabled(false);
+        playerOneSixes.setEnabled(false);
+    }//GEN-LAST:event_playerOneThreesActionPerformed
+
+    private void playerOneFoursActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerOneFoursActionPerformed
+        
+        if (one.getText().equals("4"))
+        {
+            playerOneFoursScore = playerOneFoursScore+1;
+        }
+        if (two.getText().equals("4"))
+        {
+            playerOneFoursScore = playerOneFoursScore+1;
+        }
+        if (three.getText().equals("4"))
+        {
+            playerOneFoursScore = playerOneFoursScore+1;
+        }
+        if (four.getText().equals("4"))
+        {
+            playerOneFoursScore = playerOneFoursScore+1;
+        }
+        if (five.getText().equals("4"))
+        {
+            playerOneFoursScore = playerOneFoursScore+1;
+        }
+        
+        playerOneFoursOut.setText(String.valueOf(playerOneFoursScore));
+        playerOneAces.setEnabled(false);
+        playerOneTwos.setEnabled(false);
+        playerOneThrees.setEnabled(false);
+        playerOneFours.setEnabled(false);
+        playerOneFives.setEnabled(false);
+        playerOneSixes.setEnabled(false);
+    }//GEN-LAST:event_playerOneFoursActionPerformed
+
+    private void playerOneFivesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerOneFivesActionPerformed
+        
+        if (one.getText().equals("5"))
+        {
+            playerOneFivesScore = playerOneFivesScore+1;
+        }
+        if (two.getText().equals("5"))
+        {
+            playerOneFivesScore = playerOneFivesScore+1;
+        }
+        if (three.getText().equals("5"))
+        {
+            playerOneFivesScore = playerOneFivesScore+1;
+        }
+        if (four.getText().equals("5"))
+        {
+            playerOneFivesScore = playerOneFivesScore+1;
+        }
+        if (five.getText().equals("5"))
+        {
+            playerOneFivesScore = playerOneFivesScore+1;
+        }
+        
+        playerOneFivesOut.setText(String.valueOf(playerOneFivesScore));
+        playerOneAces.setEnabled(false);
+        playerOneTwos.setEnabled(false);
+        playerOneThrees.setEnabled(false);
+        playerOneFours.setEnabled(false);
+        playerOneFives.setEnabled(false);
+        playerOneSixes.setEnabled(false);
+    }//GEN-LAST:event_playerOneFivesActionPerformed
+
+    private void playerOneSixesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerOneSixesActionPerformed
+        
+        if (one.getText().equals("6"))
+        {
+            playerOneSixesScore = playerOneSixesScore+1;
+        }
+        if (two.getText().equals("6"))
+        {
+            playerOneSixesScore = playerOneSixesScore+1;
+        }
+        if (three.getText().equals("6"))
+        {
+            playerOneSixesScore = playerOneSixesScore+1;
+        }
+        if (four.getText().equals("6"))
+        {
+            playerOneSixesScore = playerOneSixesScore+1;
+        }
+        if (five.getText().equals("6"))
+        {
+            playerOneSixesScore = playerOneSixesScore+1;
+        }
+        
+        playerOneSixesOut.setText(String.valueOf(playerOneSixesScore));
+        playerOneAces.setEnabled(false);
+        playerOneTwos.setEnabled(false);
+        playerOneThrees.setEnabled(false);
+        playerOneFours.setEnabled(false);
+        playerOneFives.setEnabled(false);
+        playerOneSixes.setEnabled(false);
+    }//GEN-LAST:event_playerOneSixesActionPerformed
+
+    private void playerTwoAcesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerTwoAcesActionPerformed
+        if (one.getText().equals("1"))
+        {
+            playerTwoAcesScore = playerTwoAcesScore+1;
+        }
+        if (two.getText().equals("1"))
+        {
+            playerTwoAcesScore = playerTwoAcesScore+1;
+        }
+        if (three.getText().equals("1"))
+        {
+            playerTwoAcesScore = playerTwoAcesScore+1;
+        }
+        if (four.getText().equals("1"))
+        {
+            playerTwoAcesScore = playerTwoAcesScore+1;
+        }
+        if (five.getText().equals("1"))
+        {
+            playerTwoAcesScore = playerTwoAcesScore+1;
+        }
+        
+        playerTwoAcesOut.setText(String.valueOf(playerTwoAcesScore));
+        playerTwoAces.setEnabled(false);
+        playerTwoTwos.setEnabled(false);
+        playerTwoThrees.setEnabled(false);
+        playerTwoFours.setEnabled(false);
+        playerTwoFives.setEnabled(false);
+        playerTwoSixes.setEnabled(false);
+    }//GEN-LAST:event_playerTwoAcesActionPerformed
+
+    private void playerTwoTwosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerTwoTwosActionPerformed
+        if (one.getText().equals("2"))
+        {
+            playerTwoTwosScore = playerTwoTwosScore+1;
+        }
+        if (two.getText().equals("2"))
+        {
+            playerTwoTwosScore = playerTwoTwosScore+1;
+        }
+        if (three.getText().equals("2"))
+        {
+            playerTwoTwosScore = playerTwoTwosScore+1;
+        }
+        if (four.getText().equals("2"))
+        {
+            playerTwoTwosScore = playerTwoTwosScore+1;
+        }
+        if (five.getText().equals("2"))
+        {
+            playerTwoTwosScore = playerTwoTwosScore+1;
+        }
+        
+        playerTwoTwosOut.setText(String.valueOf(playerTwoTwosScore));
+        playerTwoAces.setEnabled(false);
+        playerTwoTwos.setEnabled(false);
+        playerTwoThrees.setEnabled(false);
+        playerTwoFours.setEnabled(false);
+        playerTwoFives.setEnabled(false);
+        playerTwoSixes.setEnabled(false);
+    }//GEN-LAST:event_playerTwoTwosActionPerformed
+
+    private void playerTwoThreesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerTwoThreesActionPerformed
+        if (one.getText().equals("3"))
+        {
+            playerTwoThreesScore = playerTwoThreesScore+1;
+        }
+        if (two.getText().equals("3"))
+        {
+            playerTwoThreesScore = playerTwoThreesScore+1;
+        }
+        if (three.getText().equals("3"))
+        {
+            playerTwoThreesScore = playerTwoThreesScore+1;
+        }
+        if (four.getText().equals("3"))
+        {
+            playerTwoThreesScore = playerTwoThreesScore+1;
+        }
+        if (five.getText().equals("3"))
+        {
+            playerTwoThreesScore = playerTwoThreesScore+1;
+        }
+        
+        playerTwoThreesOut.setText(String.valueOf(playerTwoThreesScore));
+        playerTwoAces.setEnabled(false);
+        playerTwoTwos.setEnabled(false);
+        playerTwoThrees.setEnabled(false);
+        playerTwoFours.setEnabled(false);
+        playerTwoFives.setEnabled(false);
+        playerTwoSixes.setEnabled(false);
+    }//GEN-LAST:event_playerTwoThreesActionPerformed
+
+    private void playerTwoFoursActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerTwoFoursActionPerformed
+        if (one.getText().equals("4"))
+        {
+            playerTwoFoursScore = playerTwoFoursScore+1;
+        }
+        if (two.getText().equals("4"))
+        {
+            playerTwoFoursScore = playerTwoFoursScore+1;
+        }
+        if (three.getText().equals("4"))
+        {
+            playerTwoFoursScore = playerTwoFoursScore+1;
+        }
+        if (four.getText().equals("4"))
+        {
+            playerTwoFoursScore = playerTwoFoursScore+1;
+        }
+        if (five.getText().equals("4"))
+        {
+            playerTwoFoursScore = playerTwoFoursScore+1;
+        }
+        
+        playerTwoFoursOut.setText(String.valueOf(playerTwoFoursScore));
+        playerTwoAces.setEnabled(false);
+        playerTwoTwos.setEnabled(false);
+        playerTwoThrees.setEnabled(false);
+        playerTwoFours.setEnabled(false);
+        playerTwoFives.setEnabled(false);
+        playerTwoSixes.setEnabled(false);
+    }//GEN-LAST:event_playerTwoFoursActionPerformed
+
+    private void playerTwoFivesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerTwoFivesActionPerformed
+        if (one.getText().equals("5"))
+        {
+            playerTwoFivesScore = playerTwoFivesScore+1;
+        }
+        if (two.getText().equals("5"))
+        {
+            playerTwoFivesScore = playerTwoFivesScore+1;
+        }
+        if (three.getText().equals("5"))
+        {
+            playerTwoFivesScore = playerTwoFivesScore+1;
+        }
+        if (four.getText().equals("5"))
+        {
+            playerTwoFivesScore = playerTwoFivesScore+1;
+        }
+        if (five.getText().equals("5"))
+        {
+            playerTwoFivesScore = playerTwoFivesScore+1;
+        }
+        
+        playerTwoFivesOut.setText(String.valueOf(playerTwoFivesScore));
+        playerTwoAces.setEnabled(false);
+        playerTwoTwos.setEnabled(false);
+        playerTwoThrees.setEnabled(false);
+        playerTwoFours.setEnabled(false);
+        playerTwoFives.setEnabled(false);
+        playerTwoSixes.setEnabled(false);
+    }//GEN-LAST:event_playerTwoFivesActionPerformed
+
+    private void playerTwoSixesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerTwoSixesActionPerformed
+        if (one.getText().equals("6"))
+        {
+            playerTwoSixesScore = playerTwoSixesScore+1;
+        }
+        if (two.getText().equals("6"))
+        {
+            playerTwoSixesScore = playerTwoSixesScore+1;
+        }
+        if (three.getText().equals("6"))
+        {
+            playerTwoSixesScore = playerTwoSixesScore+1;
+        }
+        if (four.getText().equals("6"))
+        {
+            playerTwoSixesScore = playerTwoSixesScore+1;
+        }
+        if (five.getText().equals("6"))
+        {
+            playerTwoSixesScore = playerTwoSixesScore+1;
+        }
+        
+        playerTwoSixesOut.setText(String.valueOf(playerTwoSixesScore));
+        playerTwoAces.setEnabled(false);
+        playerTwoTwos.setEnabled(false);
+        playerTwoThrees.setEnabled(false);
+        playerTwoFours.setEnabled(false);
+        playerTwoFives.setEnabled(false);
+        playerTwoSixes.setEnabled(false);
+    }//GEN-LAST:event_playerTwoSixesActionPerformed
 
     /**
      * @param args the command line arguments
