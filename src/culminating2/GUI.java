@@ -20,6 +20,293 @@ public class GUI extends javax.swing.JFrame {
         initComponents();
     }
     
+    
+    public boolean threeOfAKindCheck()
+    {
+        int onesCount = 0;
+        int twosCount = 0;
+        int threesCount = 0;
+        int foursCount = 0;
+        int fivesCount = 0;
+        int sixesCount = 0;
+            
+        if(one.getText().equals("1"))
+        {
+            onesCount = onesCount+1;
+        }
+        if(one.getText().equals("2"))
+        {
+            twosCount = twosCount+1;
+        }
+        if(one.getText().equals("3"))
+        {
+            threesCount = threesCount+1;
+        }
+        if(one.getText().equals("4"))
+        {
+            foursCount = foursCount+1;
+        }
+        if(one.getText().equals("5"))
+        {
+            fivesCount = fivesCount+1;
+        }
+        if(one.getText().equals("6"))
+        {
+            sixesCount = sixesCount+1;
+        }
+        
+        if(two.getText().equals("1"))
+        {
+            onesCount = onesCount+1;
+        }
+        if(two.getText().equals("2"))
+        {
+            twosCount = twosCount+1;
+        }
+        if(two.getText().equals("3"))
+        {
+            threesCount = threesCount+1;
+        }
+        if(two.getText().equals("4"))
+        {
+            foursCount = foursCount+1;
+        }
+        if(two.getText().equals("5"))
+        {
+            fivesCount = fivesCount+1;
+        }
+        if(two.getText().equals("6"))
+        {
+            sixesCount = sixesCount+1;
+        }
+        
+        if(three.getText().equals("1"))
+        {
+            onesCount = onesCount+1;
+        }
+        if(three.getText().equals("2"))
+        {
+            twosCount = twosCount+1;
+        }
+        if(three.getText().equals("3"))
+        {
+            threesCount = threesCount+1;
+        }
+        if(three.getText().equals("4"))
+        {
+            foursCount = foursCount+1;
+        }
+        if(three.getText().equals("5"))
+        {
+            fivesCount = fivesCount+1;
+        }
+        if(three.getText().equals("6"))
+        {
+            sixesCount = sixesCount+1;
+        }
+        
+        if(four.getText().equals("1"))
+        {
+            onesCount = onesCount+1;
+        }
+        if(four.getText().equals("2"))
+        {
+            twosCount = twosCount+1;
+        }
+        if(four.getText().equals("3"))
+        {
+            threesCount = threesCount+1;
+        }
+        if(four.getText().equals("4"))
+        {
+            foursCount = foursCount+1;
+        }
+        if(four.getText().equals("5"))
+        {
+            fivesCount = fivesCount+1;
+        }
+        if(four.getText().equals("6"))
+        {
+            sixesCount = sixesCount+1;
+        }
+        
+        if(five.getText().equals("1"))
+        {
+            onesCount = onesCount+1;
+        }
+        if(five.getText().equals("2"))
+        {
+            twosCount = twosCount+1;
+        }
+        if(five.getText().equals("3"))
+        {
+            threesCount = threesCount+1;
+        }
+        if(five.getText().equals("4"))
+        {
+            foursCount = foursCount+1;
+        }
+        if(five.getText().equals("5"))
+        {
+            fivesCount = fivesCount+1;
+        }
+        if(five.getText().equals("6"))
+        {
+            sixesCount = sixesCount+1;
+        }
+        
+        if(onesCount == 3 || twosCount == 3 || threesCount == 3 || foursCount == 3 || fivesCount == 3 || sixesCount == 3)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public boolean fourOfAKindCheck()
+    {
+        int onesCount = 0;
+        int twosCount = 0;
+        int threesCount = 0;
+        int foursCount = 0;
+        int fivesCount = 0;
+        int sixesCount = 0;
+            
+        if(one.getText().equals("1"))
+        {
+            onesCount = onesCount+1;
+        }
+        if(one.getText().equals("2"))
+        {
+            twosCount = twosCount+1;
+        }
+        if(one.getText().equals("3"))
+        {
+            threesCount = threesCount+1;
+        }
+        if(one.getText().equals("4"))
+        {
+            foursCount = foursCount+1;
+        }
+        if(one.getText().equals("5"))
+        {
+            fivesCount = fivesCount+1;
+        }
+        if(one.getText().equals("6"))
+        {
+            sixesCount = sixesCount+1;
+        }
+        
+        if(two.getText().equals("1"))
+        {
+            onesCount = onesCount+1;
+        }
+        if(two.getText().equals("2"))
+        {
+            twosCount = twosCount+1;
+        }
+        if(two.getText().equals("3"))
+        {
+            threesCount = threesCount+1;
+        }
+        if(two.getText().equals("4"))
+        {
+            foursCount = foursCount+1;
+        }
+        if(two.getText().equals("5"))
+        {
+            fivesCount = fivesCount+1;
+        }
+        if(two.getText().equals("6"))
+        {
+            sixesCount = sixesCount+1;
+        }
+        
+        if(three.getText().equals("1"))
+        {
+            onesCount = onesCount+1;
+        }
+        if(three.getText().equals("2"))
+        {
+            twosCount = twosCount+1;
+        }
+        if(three.getText().equals("3"))
+        {
+            threesCount = threesCount+1;
+        }
+        if(three.getText().equals("4"))
+        {
+            foursCount = foursCount+1;
+        }
+        if(three.getText().equals("5"))
+        {
+            fivesCount = fivesCount+1;
+        }
+        if(three.getText().equals("6"))
+        {
+            sixesCount = sixesCount+1;
+        }
+        
+        if(four.getText().equals("1"))
+        {
+            onesCount = onesCount+1;
+        }
+        if(four.getText().equals("2"))
+        {
+            twosCount = twosCount+1;
+        }
+        if(four.getText().equals("3"))
+        {
+            threesCount = threesCount+1;
+        }
+        if(four.getText().equals("4"))
+        {
+            foursCount = foursCount+1;
+        }
+        if(four.getText().equals("5"))
+        {
+            fivesCount = fivesCount+1;
+        }
+        if(four.getText().equals("6"))
+        {
+            sixesCount = sixesCount+1;
+        }
+        
+        if(five.getText().equals("1"))
+        {
+            onesCount = onesCount+1;
+        }
+        if(five.getText().equals("2"))
+        {
+            twosCount = twosCount+1;
+        }
+        if(five.getText().equals("3"))
+        {
+            threesCount = threesCount+1;
+        }
+        if(five.getText().equals("4"))
+        {
+            foursCount = foursCount+1;
+        }
+        if(five.getText().equals("5"))
+        {
+            fivesCount = fivesCount+1;
+        }
+        if(five.getText().equals("6"))
+        {
+            sixesCount = sixesCount+1;
+        }
+        
+        if(onesCount == 4 || twosCount == 4 || threesCount == 4 || foursCount == 4 || fivesCount == 4 || sixesCount == 4)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
     public boolean onesCheck()
     {
         if(oneReg == 1||twoReg == 1||threeReg == 1||fourReg == 1||fiveReg == 1)
@@ -392,6 +679,11 @@ public class GUI extends javax.swing.JFrame {
 
         playerOne3ok.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerOne3ok.setText("3 of a Kind");
+        playerOne3ok.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playerOne3okActionPerformed(evt);
+            }
+        });
 
         playerOne4ok.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerOne4ok.setText("4 of a Kind");
@@ -777,14 +1069,14 @@ public class GUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
 
         pack();
@@ -882,6 +1174,14 @@ public class GUI extends javax.swing.JFrame {
         {
             playerOneSixes.setEnabled(false);
         }
+        if(threeOfAKindCheck() == false)
+        {
+            playerOne3ok.setEnabled(false);
+        }
+        if(fourOfAKindCheck() == false)
+        {
+            playerOne4ok.setEnabled(false);
+        }
         }
         
     }//GEN-LAST:event_playerOneRollActionPerformed
@@ -977,6 +1277,14 @@ public class GUI extends javax.swing.JFrame {
         if(sixesCheck() == false)
         {
             playerTwoSixes.setEnabled(false);
+        }
+        if(threeOfAKindCheck() == false)
+        {
+            playerTwo3ok.setEnabled(false);
+        }
+        if(fourOfAKindCheck() == false)
+        {
+            playerTwo4ok.setEnabled(false);
         }
         }
     }//GEN-LAST:event_playerTwoRollActionPerformed
@@ -1358,6 +1666,10 @@ public class GUI extends javax.swing.JFrame {
         playerTwoFives.setEnabled(false);
         playerTwoSixes.setEnabled(false);
     }//GEN-LAST:event_playerTwoSixesActionPerformed
+
+    private void playerOne3okActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerOne3okActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_playerOne3okActionPerformed
 
     /**
      * @param args the command line arguments
