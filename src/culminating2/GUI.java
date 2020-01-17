@@ -20,7 +20,38 @@ public class GUI extends javax.swing.JFrame {
         initComponents();
     }
     
-    
+    public boolean smallStraightCheck()
+    {
+        int numbers[] = new int[5];
+        
+        numbers[0] = Integer.parseInt(one.getText());
+        numbers[1] = Integer.parseInt(two.getText());
+        numbers[2] = Integer.parseInt(three.getText());
+        numbers[3] = Integer.parseInt(four.getText());
+        numbers[4] = Integer.parseInt(five.getText());
+        
+        boolean exit = false;
+        int temp;
+        
+        while(exit == false) //repeat until numbers are sorted
+        {
+            exit = true;
+            for(int i=0 ; i<numbers.length-1 ; i++) //Scan the length of the array for numbers out of place
+            {
+                if(numbers[i]>numbers[i+1]) //If number to the left is less than number to the right
+                {
+                    //Swap numbers
+                    temp = numbers[i+1];
+                    numbers[i+1]=numbers[i];
+                    numbers[i] = temp;
+                    exit = false;
+                }
+            }
+        }
+        
+        
+        return false;
+    }
     public boolean threeOfAKindCheck()
     {
         int onesCount = 0;
@@ -375,7 +406,10 @@ public class GUI extends javax.swing.JFrame {
     }
     
     Random random = new Random();
-    int rollCount = 3;
+    
+    final int rollTotal = 3;
+    
+    int rollCount = rollTotal;
     
     int oneReg;
     int twoReg;
