@@ -49,8 +49,50 @@ public class GUI extends javax.swing.JFrame {
             }
         }
         
+        if(numbers[0] == numbers[1] || numbers[0] == numbers[2] || numbers[0] == numbers[3] || numbers[0] == numbers[4])
+        {
+            numbers[0] = -1;
+        }
+        if(numbers[1] == numbers[0] || numbers[1] == numbers[2] || numbers[1] == numbers[3] || numbers[1] == numbers[4])
+        {
+            numbers[1] = -1;
+        }
+        if(numbers[2] == numbers[0] || numbers[2] == numbers[1] || numbers[2] == numbers[3] || numbers[2] == numbers[4])
+        {
+            numbers[2] = -1;
+        }
+        if(numbers[3] == numbers[0] || numbers[3] == numbers[1] || numbers[3] == numbers[2] || numbers[3] == numbers[4])
+        {
+            numbers[3] = -1;
+        }
+        if(numbers[4] == numbers[0] || numbers[4] == numbers[1] || numbers[4] == numbers[2] || numbers[4] == numbers[3])
+        {
+            numbers[4] = -1;
+        }
         
+        String finalValue = "";
+        
+        for(int i = 0; i <= 4; i++)
+        {
+            if(numbers[i] == -1)
+            {
+                
+            }
+            else
+            {
+                finalValue += String.valueOf(numbers[i]);
+            }
+        }
+        
+        joeMama.setText(finalValue);
+        if(finalValue.equals("1234")||finalValue.equals("2345")||finalValue.equals("3456")||finalValue.equals("12345")||finalValue.equals("23456"))
+        {
+            return true;
+        }
+        else
+        {
         return false;
+        }
     }
     public boolean threeOfAKindCheck()
     {
@@ -186,7 +228,7 @@ public class GUI extends javax.swing.JFrame {
             sixesCount = sixesCount+1;
         }
         
-        if(onesCount == 3 || twosCount == 3 || threesCount == 3 || foursCount == 3 || fivesCount == 3 || sixesCount == 3)
+        if(onesCount >= 3 || twosCount >= 3 || threesCount >= 3 || foursCount >= 3 || fivesCount >= 3 || sixesCount >= 3)
         {
             return true;
         }
@@ -500,6 +542,7 @@ public class GUI extends javax.swing.JFrame {
         playerTwoYahtzee = new javax.swing.JButton();
         playerTwoChanceOut = new javax.swing.JTextField();
         playerTwoChance = new javax.swing.JButton();
+        joeMama = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -742,6 +785,11 @@ public class GUI extends javax.swing.JFrame {
 
         playerOneSmallStraight.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerOneSmallStraight.setText("sm. straight");
+        playerOneSmallStraight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playerOneSmallStraightActionPerformed(evt);
+            }
+        });
 
         playerOneLargeStraightOut.setEditable(false);
         playerOneLargeStraightOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -823,6 +871,8 @@ public class GUI extends javax.swing.JFrame {
         playerTwoChance.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerTwoChance.setText("Chance");
 
+        joeMama.setText("jLabel3");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -863,19 +913,6 @@ public class GUI extends javax.swing.JFrame {
                             .addComponent(playerOneSixesOut, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(one, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(two, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(three, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(four, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(five, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel2))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(318, 318, 318)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(playerTwoAces, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -900,7 +937,23 @@ public class GUI extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(playerTwoSixes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(playerTwoSixesOut, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE))))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(joeMama)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(one, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(two, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(three, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(four, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(five, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel2))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -979,7 +1032,9 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(playerOneRoll, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(playerTwoRoll, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(58, 58, 58)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(joeMama)
+                .addGap(33, 33, 33)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(playerOneAcesOut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1128,12 +1183,14 @@ public class GUI extends javax.swing.JFrame {
             playerTwoFours.setEnabled(true);
             playerTwoFives.setEnabled(true);
             playerTwoSixes.setEnabled(true);
+            playerTwoSmallStraight.setEnabled(true);
             playerOneAces.setEnabled(false);
             playerOneTwos.setEnabled(false);
             playerOneThrees.setEnabled(false);
             playerOneFours.setEnabled(false);
             playerOneFives.setEnabled(false);
             playerOneSixes.setEnabled(false);
+            playerOneSmallStraight.setEnabled(false);
             rollCount = 3;
             playerOneRoll.setText("Roll 3");
             one.setText("0");
@@ -1208,6 +1265,10 @@ public class GUI extends javax.swing.JFrame {
         {
             playerOneSixes.setEnabled(false);
         }
+        if(threeOfAKindCheck() == true)
+        {
+            playerOne3ok.setEnabled(true);
+        }
         if(threeOfAKindCheck() == false)
         {
             playerOne3ok.setEnabled(false);
@@ -1215,6 +1276,14 @@ public class GUI extends javax.swing.JFrame {
         if(fourOfAKindCheck() == false)
         {
             playerOne4ok.setEnabled(false);
+        }
+        if(smallStraightCheck() == true)
+        {
+            playerOneSmallStraight.setEnabled(true);
+        }
+        if(smallStraightCheck() == false)
+        {
+            playerOneSmallStraight.setEnabled(false);
         }
         }
         
@@ -1232,12 +1301,14 @@ public class GUI extends javax.swing.JFrame {
             playerTwoFours.setEnabled(false);
             playerTwoFives.setEnabled(false);
             playerTwoSixes.setEnabled(false);
+            playerTwoSmallStraight.setEnabled(false);
             playerOneAces.setEnabled(true);
             playerOneTwos.setEnabled(true);
             playerOneThrees.setEnabled(true);
             playerOneFours.setEnabled(true);
             playerOneFives.setEnabled(true);
             playerOneSixes.setEnabled(true);
+            playerOneSmallStraight.setEnabled(true);
             rollCount = 3;
             playerTwoRoll.setText("Roll 3");
             one.setText("0");
@@ -1319,6 +1390,14 @@ public class GUI extends javax.swing.JFrame {
         if(fourOfAKindCheck() == false)
         {
             playerTwo4ok.setEnabled(false);
+        }
+        if(smallStraightCheck() == true)
+        {
+            playerTwoSmallStraight.setEnabled(true);
+        }
+        if(smallStraightCheck() == false)
+        {
+            playerTwoSmallStraight.setEnabled(false);
         }
         }
     }//GEN-LAST:event_playerTwoRollActionPerformed
@@ -1705,6 +1784,12 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_playerOne3okActionPerformed
 
+    private void playerOneSmallStraightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerOneSmallStraightActionPerformed
+        
+        playerOneSmallStraight.setEnabled(false);
+            
+    }//GEN-LAST:event_playerOneSmallStraightActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1746,6 +1831,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel joeMama;
     private javax.swing.JTextField one;
     private javax.swing.JButton playerOne3ok;
     private javax.swing.JTextField playerOne3okOut;
