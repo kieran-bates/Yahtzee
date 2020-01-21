@@ -138,7 +138,6 @@ public class GUI extends javax.swing.JFrame {
             }
         }
         
-        joeMama.setText(finalValue);
         if(finalValue.equals("12345")||finalValue.equals("23456"))
         {
             return true;
@@ -212,7 +211,7 @@ public class GUI extends javax.swing.JFrame {
             }
         }
         
-        joeMama.setText(finalValue);
+        
         if(finalValue.equals("1234")||finalValue.equals("2345")||finalValue.equals("3456")||finalValue.equals("12345")||finalValue.equals("23456"))
         {
             return true;
@@ -580,6 +579,10 @@ public class GUI extends javax.swing.JFrame {
     final int rollTotal = 3;
     
     int rollCount = rollTotal;
+    final int numberOfRounds = 10;
+    int roundCount = 0;
+    int jTextField1 = 0;
+    int jTextField2 = 0;
     
     int oneReg;
     int twoReg;
@@ -613,6 +616,9 @@ public class GUI extends javax.swing.JFrame {
     int playerTwoYahtzeeScore = 0;
     int playerTwoFullHouseScore = 0;
     int playerTwoChanceScore = 0;
+    
+    int playerOneTotalScore = 0;
+    int playerTwoTotalScore = 0;
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -684,7 +690,9 @@ public class GUI extends javax.swing.JFrame {
         playerTwoYahtzee = new javax.swing.JButton();
         playerTwoChanceOut = new javax.swing.JTextField();
         playerTwoChance = new javax.swing.JButton();
-        joeMama = new javax.swing.JLabel();
+        playerOneTotalScoreOut = new javax.swing.JTextField();
+        playerTwoTotalScoreOut = new javax.swing.JTextField();
+        winnerOutput = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1015,6 +1023,11 @@ public class GUI extends javax.swing.JFrame {
 
         playerTwoFullHouse.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerTwoFullHouse.setText("Full House");
+        playerTwoFullHouse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playerTwoFullHouseActionPerformed(evt);
+            }
+        });
 
         playerTwoSmallStraightOut.setEditable(false);
         playerTwoSmallStraightOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -1023,6 +1036,11 @@ public class GUI extends javax.swing.JFrame {
 
         playerTwoSmallStraight.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerTwoSmallStraight.setText("sm. straight");
+        playerTwoSmallStraight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playerTwoSmallStraightActionPerformed(evt);
+            }
+        });
 
         playerTwoLargeStraightOut.setEditable(false);
         playerTwoLargeStraightOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -1031,6 +1049,11 @@ public class GUI extends javax.swing.JFrame {
 
         playerTwoLargeStraight.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerTwoLargeStraight.setText("lg. straight");
+        playerTwoLargeStraight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playerTwoLargeStraightActionPerformed(evt);
+            }
+        });
 
         playerTwoYahtzeeOut.setEditable(false);
         playerTwoYahtzeeOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -1039,6 +1062,11 @@ public class GUI extends javax.swing.JFrame {
 
         playerTwoYahtzee.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerTwoYahtzee.setText("Yahtzee");
+        playerTwoYahtzee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playerTwoYahtzeeActionPerformed(evt);
+            }
+        });
 
         playerTwoChanceOut.setEditable(false);
         playerTwoChanceOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -1047,8 +1075,22 @@ public class GUI extends javax.swing.JFrame {
 
         playerTwoChance.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerTwoChance.setText("Chance");
+        playerTwoChance.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playerTwoChanceActionPerformed(evt);
+            }
+        });
 
-        joeMama.setText("jLabel3");
+        playerOneTotalScoreOut.setEditable(false);
+        playerOneTotalScoreOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        playerOneTotalScoreOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        playerTwoTotalScoreOut.setEditable(false);
+        playerTwoTotalScoreOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        playerTwoTotalScoreOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        winnerOutput.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        winnerOutput.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -1059,7 +1101,11 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(playerOneRoll, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(playerOneTotalScoreOut, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(playerTwoTotalScoreOut, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(playerTwoRoll, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1117,18 +1163,18 @@ public class GUI extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(joeMama)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(one, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(two, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(three, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(four, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(five, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(two, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(three, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(four, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(five, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(winnerOutput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel2))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -1161,7 +1207,7 @@ public class GUI extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(playerOneYahtzee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(playerOneYahtzeeOut, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 291, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(playerTwoChance, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1206,12 +1252,15 @@ public class GUI extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(playerOneRoll, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(playerTwoRoll, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(joeMama)
-                .addGap(33, 33, 33)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(playerTwoTotalScoreOut)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(playerOneRoll, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(playerTwoRoll, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(playerOneTotalScoreOut))
+                    .addComponent(winnerOutput, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(58, 58, 58)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(playerOneAcesOut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1381,16 +1430,129 @@ public class GUI extends javax.swing.JFrame {
             three.setText("0");
             four.setText("0");
             five.setText("0");
+            
+            roundCount = roundCount+1;
+            if(roundCount == numberOfRounds)
+            {
+                if(playerOneTotalScore>playerTwoTotalScore)
+                {
+                    winnerOutput.setText("Player One Win!");
+                }
+                if(playerOneTotalScore<playerTwoTotalScore);
+                {
+                    winnerOutput.setText("Player Two Wins!");
+                }
+                if(playerOneTotalScore == playerTwoTotalScore);
+                {
+                    winnerOutput.setText("Tie!");
+                }
+                playerOneRoll.setEnabled(false);
+                playerOneAces.setEnabled(false);
+                playerOneTwos.setEnabled(false);
+                playerOneThrees.setEnabled(false);
+                playerOneFours.setEnabled(false);
+                playerOneFives.setEnabled(false);
+                playerOneSixes.setEnabled(false);
+                playerOne3ok.setEnabled(false);
+                playerOne4ok.setEnabled(false);
+                playerOneFullHouse.setEnabled(false);
+                playerOneSmallStraight.setEnabled(false);
+                playerOneLargeStraight.setEnabled(false);
+                playerOneChance.setEnabled(false);
+                playerOneYahtzee.setEnabled(false);
+                playerTwoRoll.setEnabled(false);
+                playerTwoAces.setEnabled(false);
+                playerTwoTwos.setEnabled(false);
+                playerTwoThrees.setEnabled(false);
+                playerTwoFours.setEnabled(false);
+                playerTwoFives.setEnabled(false);
+                playerTwoSixes.setEnabled(false);
+                playerTwo3ok.setEnabled(false);
+                playerTwo4ok.setEnabled(false);
+                playerTwoFullHouse.setEnabled(false);
+                playerTwoSmallStraight.setEnabled(false);
+                playerTwoLargeStraight.setEnabled(false);
+                playerTwoChance.setEnabled(false);
+                playerTwoYahtzee.setEnabled(false);
+            }
         }
         else
         {
         playerTwoRoll.setEnabled(false);
         
-        one.setText(String.valueOf(random.nextInt(7)));
-        two.setText(String.valueOf(random.nextInt(7)));
-        three.setText(String.valueOf(random.nextInt(7)));
-        four.setText(String.valueOf(random.nextInt(7)));
-        five.setText(String.valueOf(random.nextInt(7)));
+        boolean repeat = true;
+        int temp;
+        
+        while(repeat == true)
+        {
+            temp = random.nextInt(7);
+            if(temp == 0)
+            {
+                repeat = true;
+            }
+            else
+            {
+                one.setText(String.valueOf(temp));
+                repeat = false;
+            }
+        }
+        repeat = true;
+        while(repeat == true)
+        {
+            temp = random.nextInt(7);
+            if(temp == 0)
+            {
+                repeat = true;
+            }
+            else
+            {
+                two.setText(String.valueOf(temp));
+                repeat = false;
+            }
+        }
+        repeat = true;
+        while(repeat == true)
+        {
+            temp = random.nextInt(7);
+            if(temp == 0)
+            {
+                repeat = true;
+            }
+            else
+            {
+                three.setText(String.valueOf(temp));
+                repeat = false;
+            }
+        }
+        repeat = true;
+        while(repeat == true)
+        {
+            temp = random.nextInt(7);
+            if(temp == 0)
+            {
+                repeat = true;
+            }
+            else
+            {
+                four.setText(String.valueOf(temp));
+                repeat = false;
+            }
+        }
+        repeat = true;
+        while(repeat == true)
+        {
+            temp = random.nextInt(7);
+            if(temp == 0)
+            {
+                repeat = true;
+            }
+            else
+            {
+                five.setText(String.valueOf(temp));
+                repeat = false;
+            }
+        }
+        
         rollCount = rollCount - 1;
         playerOneRoll.setText("Roll "+rollCount);
         
@@ -1529,16 +1691,129 @@ public class GUI extends javax.swing.JFrame {
             three.setText("0");
             four.setText("0");
             five.setText("0");
+            
+            roundCount = roundCount+1;
+            if(roundCount == numberOfRounds)
+            {
+                if(playerOneTotalScore>playerTwoTotalScore)
+                {
+                    winnerOutput.setText("Player One Win!");
+                }
+                if(playerOneTotalScore<playerTwoTotalScore);
+                {
+                    winnerOutput.setText("Player Two Wins!");
+                }
+                if(playerOneTotalScore == playerTwoTotalScore);
+                {
+                    winnerOutput.setText("Tie!");
+                }
+                playerOneRoll.setEnabled(false);
+                playerOneAces.setEnabled(false);
+                playerOneTwos.setEnabled(false);
+                playerOneThrees.setEnabled(false);
+                playerOneFours.setEnabled(false);
+                playerOneFives.setEnabled(false);
+                playerOneSixes.setEnabled(false);
+                playerOne3ok.setEnabled(false);
+                playerOne4ok.setEnabled(false);
+                playerOneFullHouse.setEnabled(false);
+                playerOneSmallStraight.setEnabled(false);
+                playerOneLargeStraight.setEnabled(false);
+                playerOneChance.setEnabled(false);
+                playerOneYahtzee.setEnabled(false);
+                playerTwoRoll.setEnabled(false);
+                playerTwoAces.setEnabled(false);
+                playerTwoTwos.setEnabled(false);
+                playerTwoThrees.setEnabled(false);
+                playerTwoFours.setEnabled(false);
+                playerTwoFives.setEnabled(false);
+                playerTwoSixes.setEnabled(false);
+                playerTwo3ok.setEnabled(false);
+                playerTwo4ok.setEnabled(false);
+                playerTwoFullHouse.setEnabled(false);
+                playerTwoSmallStraight.setEnabled(false);
+                playerTwoLargeStraight.setEnabled(false);
+                playerTwoChance.setEnabled(false);
+                playerTwoYahtzee.setEnabled(false);
+            }
         }
         else
         {
         playerTwoRoll.setEnabled(true);
         
-        one.setText(String.valueOf(random.nextInt(7)));
-        two.setText(String.valueOf(random.nextInt(7)));
-        three.setText(String.valueOf(random.nextInt(7)));
-        four.setText(String.valueOf(random.nextInt(7)));
-        five.setText(String.valueOf(random.nextInt(7)));
+        boolean repeat = true;
+        int temp;
+        
+        while(repeat == true)
+        {
+            temp = random.nextInt(7);
+            if(temp == 0)
+            {
+                repeat = true;
+            }
+            else
+            {
+                one.setText(String.valueOf(temp));
+                repeat = false;
+            }
+        }
+        repeat = true;
+        while(repeat == true)
+        {
+            temp = random.nextInt(7);
+            if(temp == 0)
+            {
+                repeat = true;
+            }
+            else
+            {
+                two.setText(String.valueOf(temp));
+                repeat = false;
+            }
+        }
+        repeat = true;
+        while(repeat == true)
+        {
+            temp = random.nextInt(7);
+            if(temp == 0)
+            {
+                repeat = true;
+            }
+            else
+            {
+                three.setText(String.valueOf(temp));
+                repeat = false;
+            }
+        }
+        repeat = true;
+        while(repeat == true)
+        {
+            temp = random.nextInt(7);
+            if(temp == 0)
+            {
+                repeat = true;
+            }
+            else
+            {
+                four.setText(String.valueOf(temp));
+                repeat = false;
+            }
+        }
+        repeat = true;
+        while(repeat == true)
+        {
+            temp = random.nextInt(7);
+            if(temp == 0)
+            {
+                repeat = true;
+            }
+            else
+            {
+                five.setText(String.valueOf(temp));
+                repeat = false;
+            }
+        }
+        
         rollCount = rollCount - 1;
         playerTwoRoll.setText("Roll "+rollCount);
         
@@ -1643,23 +1918,33 @@ public class GUI extends javax.swing.JFrame {
         
         if (one.getText().equals("1"))
         {
-            playerOneAcesScore = playerOneAcesScore+2;
+            playerOneAcesScore = playerOneAcesScore+1;
+            playerOneTotalScore = playerOneTotalScore+1;
+            playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         }
         if (two.getText().equals("1"))
         {
-            playerOneAcesScore = playerOneAcesScore+2;
+            playerOneAcesScore = playerOneAcesScore+1;
+            playerOneTotalScore = playerOneTotalScore+1;
+            playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         }
         if (three.getText().equals("1"))
         {
-            playerOneAcesScore = playerOneAcesScore+2;
+            playerOneAcesScore = playerOneAcesScore+1;
+            playerOneTotalScore = playerOneTotalScore+1;
+            playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         }
         if (four.getText().equals("1"))
         {
-            playerOneAcesScore = playerOneAcesScore+2;
+            playerOneAcesScore = playerOneAcesScore+1;
+            playerOneTotalScore = playerOneTotalScore+1;
+            playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         }
         if (five.getText().equals("1"))
         {
-            playerOneAcesScore = playerOneAcesScore+2;
+            playerOneAcesScore = playerOneAcesScore+1;
+            playerOneTotalScore = playerOneTotalScore+1;
+            playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         }
         
         playerOneAcesOut.setText(String.valueOf(playerOneAcesScore));
@@ -1682,23 +1967,33 @@ public class GUI extends javax.swing.JFrame {
         
         if (one.getText().equals("2"))
         {
-            playerOneTwosScore = playerOneTwosScore+1;
+            playerOneTwosScore = playerOneTwosScore+2;
+            playerOneTotalScore = playerOneTotalScore+2;
+            playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         }
         if (two.getText().equals("2"))
         {
-            playerOneTwosScore = playerOneTwosScore+1;
+            playerOneTwosScore = playerOneTwosScore+2;
+            playerOneTotalScore = playerOneTotalScore+2;
+            playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         }
         if (three.getText().equals("2"))
         {
-            playerOneTwosScore = playerOneTwosScore+1;
+            playerOneTwosScore = playerOneTwosScore+2;
+            playerOneTotalScore = playerOneTotalScore+2;
+            playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         }
         if (four.getText().equals("2"))
         {
-            playerOneTwosScore = playerOneTwosScore+1;
+            playerOneTwosScore = playerOneTwosScore+2;
+            playerOneTotalScore = playerOneTotalScore+2;
+            playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         }
         if (five.getText().equals("2"))
         {
-            playerOneTwosScore = playerOneTwosScore+1;
+            playerOneTwosScore = playerOneTwosScore+2;
+            playerOneTotalScore = playerOneTotalScore+2;
+            playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         }
         
         playerOneTwosOut.setText(String.valueOf(playerOneTwosScore));
@@ -1715,22 +2010,32 @@ public class GUI extends javax.swing.JFrame {
         if (one.getText().equals("3"))
         {
             playerOneThreesScore = playerOneThreesScore+3;
+            playerOneTotalScore = playerOneTotalScore+3;
+            playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         }
         if (two.getText().equals("3"))
         {
             playerOneThreesScore = playerOneThreesScore+3;
+            playerOneTotalScore = playerOneTotalScore+3;
+            playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         }
         if (three.getText().equals("3"))
         {
             playerOneThreesScore = playerOneThreesScore+3;
+            playerOneTotalScore = playerOneTotalScore+3;
+            playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         }
         if (four.getText().equals("3"))
         {
             playerOneThreesScore = playerOneThreesScore+3;
+            playerOneTotalScore = playerOneTotalScore+3;
+            playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         }
         if (five.getText().equals("3"))
         {
             playerOneThreesScore = playerOneThreesScore+3;
+            playerOneTotalScore = playerOneTotalScore+3;
+            playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         }
         
         playerOneThreesOut.setText(String.valueOf(playerOneThreesScore));
@@ -1747,22 +2052,32 @@ public class GUI extends javax.swing.JFrame {
         if (one.getText().equals("4"))
         {
             playerOneFoursScore = playerOneFoursScore+4;
+            playerOneTotalScore = playerOneTotalScore+4;
+            playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         }
         if (two.getText().equals("4"))
         {
             playerOneFoursScore = playerOneFoursScore+4;
+            playerOneTotalScore = playerOneTotalScore+4;
+            playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         }
         if (three.getText().equals("4"))
         {
             playerOneFoursScore = playerOneFoursScore+4;
+            playerOneTotalScore = playerOneTotalScore+4;
+            playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         }
         if (four.getText().equals("4"))
         {
             playerOneFoursScore = playerOneFoursScore+4;
+            playerOneTotalScore = playerOneTotalScore+4;
+            playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         }
         if (five.getText().equals("4"))
         {
             playerOneFoursScore = playerOneFoursScore+4;
+            playerOneTotalScore = playerOneTotalScore+4;
+            playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         }
         
         playerOneFoursOut.setText(String.valueOf(playerOneFoursScore));
@@ -1779,22 +2094,32 @@ public class GUI extends javax.swing.JFrame {
         if (one.getText().equals("5"))
         {
             playerOneFivesScore = playerOneFivesScore+5;
+            playerOneTotalScore = playerOneTotalScore+5;
+            playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         }
         if (two.getText().equals("5"))
         {
             playerOneFivesScore = playerOneFivesScore+5;
+            playerOneTotalScore = playerOneTotalScore+5;
+            playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         }
         if (three.getText().equals("5"))
         {
             playerOneFivesScore = playerOneFivesScore+5;
+            playerOneTotalScore = playerOneTotalScore+5;
+            playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         }
         if (four.getText().equals("5"))
         {
             playerOneFivesScore = playerOneFivesScore+5;
+            playerOneTotalScore = playerOneTotalScore+5;
+            playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         }
         if (five.getText().equals("5"))
         {
             playerOneFivesScore = playerOneFivesScore+5;
+            playerOneTotalScore = playerOneTotalScore+5;
+            playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         }
         
         playerOneFivesOut.setText(String.valueOf(playerOneFivesScore));
@@ -1811,22 +2136,32 @@ public class GUI extends javax.swing.JFrame {
         if (one.getText().equals("6"))
         {
             playerOneSixesScore = playerOneSixesScore+6;
+            playerOneTotalScore = playerOneTotalScore+6;
+            playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         }
         if (two.getText().equals("6"))
         {
             playerOneSixesScore = playerOneSixesScore+6;
+            playerOneTotalScore = playerOneTotalScore+6;
+            playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         }
         if (three.getText().equals("6"))
         {
             playerOneSixesScore = playerOneSixesScore+6;
+            playerOneTotalScore = playerOneTotalScore+6;
+            playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         }
         if (four.getText().equals("6"))
         {
             playerOneSixesScore = playerOneSixesScore+6;
+            playerOneTotalScore = playerOneTotalScore+6;
+            playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         }
         if (five.getText().equals("6"))
         {
             playerOneSixesScore = playerOneSixesScore+6;
+            playerOneTotalScore = playerOneTotalScore+6;
+            playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         }
         
         playerOneSixesOut.setText(String.valueOf(playerOneSixesScore));
@@ -1842,22 +2177,32 @@ public class GUI extends javax.swing.JFrame {
         if (one.getText().equals("1"))
         {
             playerTwoAcesScore = playerTwoAcesScore+1;
+            playerTwoTotalScore = playerTwoTotalScore+1;
+            playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
         }
         if (two.getText().equals("1"))
         {
             playerTwoAcesScore = playerTwoAcesScore+1;
+            playerTwoTotalScore = playerTwoTotalScore+1;
+            playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
         }
         if (three.getText().equals("1"))
         {
             playerTwoAcesScore = playerTwoAcesScore+1;
+            playerTwoTotalScore = playerTwoTotalScore+1;
+            playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
         }
         if (four.getText().equals("1"))
         {
             playerTwoAcesScore = playerTwoAcesScore+1;
+            playerTwoTotalScore = playerTwoTotalScore+1;
+            playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
         }
         if (five.getText().equals("1"))
         {
             playerTwoAcesScore = playerTwoAcesScore+1;
+            playerTwoTotalScore = playerTwoTotalScore+1;
+            playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
         }
         
         playerTwoAcesOut.setText(String.valueOf(playerTwoAcesScore));
@@ -1872,23 +2217,33 @@ public class GUI extends javax.swing.JFrame {
     private void playerTwoTwosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerTwoTwosActionPerformed
         if (one.getText().equals("2"))
         {
-            playerTwoTwosScore = playerTwoTwosScore+1;
+            playerTwoTwosScore = playerTwoTwosScore+2;
+            playerTwoTotalScore = playerTwoTotalScore+2;
+            playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
         }
         if (two.getText().equals("2"))
         {
-            playerTwoTwosScore = playerTwoTwosScore+1;
+            playerTwoTwosScore = playerTwoTwosScore+2;
+            playerTwoTotalScore = playerTwoTotalScore+2;
+            playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
         }
         if (three.getText().equals("2"))
         {
-            playerTwoTwosScore = playerTwoTwosScore+1;
+            playerTwoTwosScore = playerTwoTwosScore+2;
+            playerTwoTotalScore = playerTwoTotalScore+2;
+            playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
         }
         if (four.getText().equals("2"))
         {
-            playerTwoTwosScore = playerTwoTwosScore+1;
+            playerTwoTwosScore = playerTwoTwosScore+2;
+            playerTwoTotalScore = playerTwoTotalScore+2;
+            playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
         }
         if (five.getText().equals("2"))
         {
-            playerTwoTwosScore = playerTwoTwosScore+1;
+            playerTwoTwosScore = playerTwoTwosScore+2;
+            playerTwoTotalScore = playerTwoTotalScore+2;
+            playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
         }
         
         playerTwoTwosOut.setText(String.valueOf(playerTwoTwosScore));
@@ -1903,23 +2258,33 @@ public class GUI extends javax.swing.JFrame {
     private void playerTwoThreesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerTwoThreesActionPerformed
         if (one.getText().equals("3"))
         {
-            playerTwoThreesScore = playerTwoThreesScore+1;
+            playerTwoThreesScore = playerTwoThreesScore+3;
+            playerTwoTotalScore = playerTwoTotalScore+3;
+            playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
         }
         if (two.getText().equals("3"))
         {
-            playerTwoThreesScore = playerTwoThreesScore+1;
+            playerTwoThreesScore = playerTwoThreesScore+3;
+            playerTwoTotalScore = playerTwoTotalScore+3;
+            playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
         }
         if (three.getText().equals("3"))
         {
-            playerTwoThreesScore = playerTwoThreesScore+1;
+            playerTwoThreesScore = playerTwoThreesScore+3;
+            playerTwoTotalScore = playerTwoTotalScore+3;
+            playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
         }
         if (four.getText().equals("3"))
         {
-            playerTwoThreesScore = playerTwoThreesScore+1;
+            playerTwoThreesScore = playerTwoThreesScore+3;
+            playerTwoTotalScore = playerTwoTotalScore+3;
+            playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
         }
         if (five.getText().equals("3"))
         {
-            playerTwoThreesScore = playerTwoThreesScore+1;
+            playerTwoThreesScore = playerTwoThreesScore+3;
+            playerTwoTotalScore = playerTwoTotalScore+3;
+            playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
         }
         
         playerTwoThreesOut.setText(String.valueOf(playerTwoThreesScore));
@@ -1934,23 +2299,33 @@ public class GUI extends javax.swing.JFrame {
     private void playerTwoFoursActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerTwoFoursActionPerformed
         if (one.getText().equals("4"))
         {
-            playerTwoFoursScore = playerTwoFoursScore+1;
+            playerTwoFoursScore = playerTwoFoursScore+4;
+            playerTwoTotalScore = playerTwoTotalScore+4;
+            playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
         }
         if (two.getText().equals("4"))
         {
-            playerTwoFoursScore = playerTwoFoursScore+1;
+            playerTwoFoursScore = playerTwoFoursScore+4;
+            playerTwoTotalScore = playerTwoTotalScore+4;
+            playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
         }
         if (three.getText().equals("4"))
         {
-            playerTwoFoursScore = playerTwoFoursScore+1;
+            playerTwoFoursScore = playerTwoFoursScore+4;
+            playerTwoTotalScore = playerTwoTotalScore+4;
+            playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
         }
         if (four.getText().equals("4"))
         {
-            playerTwoFoursScore = playerTwoFoursScore+1;
+            playerTwoFoursScore = playerTwoFoursScore+4;
+            playerTwoTotalScore = playerTwoTotalScore+4;
+            playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
         }
         if (five.getText().equals("4"))
         {
-            playerTwoFoursScore = playerTwoFoursScore+1;
+            playerTwoFoursScore = playerTwoFoursScore+4;
+            playerTwoTotalScore = playerTwoTotalScore+4;
+            playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
         }
         
         playerTwoFoursOut.setText(String.valueOf(playerTwoFoursScore));
@@ -1965,23 +2340,33 @@ public class GUI extends javax.swing.JFrame {
     private void playerTwoFivesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerTwoFivesActionPerformed
         if (one.getText().equals("5"))
         {
-            playerTwoFivesScore = playerTwoFivesScore+1;
+            playerTwoFivesScore = playerTwoFivesScore+5;
+            playerTwoTotalScore = playerTwoTotalScore+5;
+            playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
         }
         if (two.getText().equals("5"))
         {
-            playerTwoFivesScore = playerTwoFivesScore+1;
+            playerTwoFivesScore = playerTwoFivesScore+5;
+            playerTwoTotalScore = playerTwoTotalScore+5;
+            playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
         }
         if (three.getText().equals("5"))
         {
-            playerTwoFivesScore = playerTwoFivesScore+1;
+            playerTwoFivesScore = playerTwoFivesScore+5;
+            playerTwoTotalScore = playerTwoTotalScore+5;
+            playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
         }
         if (four.getText().equals("5"))
         {
-            playerTwoFivesScore = playerTwoFivesScore+1;
+            playerTwoFivesScore = playerTwoFivesScore+5;
+            playerTwoTotalScore = playerTwoTotalScore+5;
+            playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
         }
         if (five.getText().equals("5"))
         {
-            playerTwoFivesScore = playerTwoFivesScore+1;
+            playerTwoFivesScore = playerTwoFivesScore+5;
+            playerTwoTotalScore = playerTwoTotalScore+5;
+            playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
         }
         
         playerTwoFivesOut.setText(String.valueOf(playerTwoFivesScore));
@@ -1996,23 +2381,33 @@ public class GUI extends javax.swing.JFrame {
     private void playerTwoSixesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerTwoSixesActionPerformed
         if (one.getText().equals("6"))
         {
-            playerTwoSixesScore = playerTwoSixesScore+1;
+            playerTwoSixesScore = playerTwoSixesScore+6;
+            playerTwoTotalScore = playerTwoTotalScore+6;
+            playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
         }
         if (two.getText().equals("6"))
         {
-            playerTwoSixesScore = playerTwoSixesScore+1;
+            playerTwoSixesScore = playerTwoSixesScore+6;
+            playerTwoTotalScore = playerTwoTotalScore+6;
+            playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
         }
         if (three.getText().equals("6"))
         {
-            playerTwoSixesScore = playerTwoSixesScore+1;
+            playerTwoSixesScore = playerTwoSixesScore+6;
+            playerTwoTotalScore = playerTwoTotalScore+6;
+            playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
         }
         if (four.getText().equals("6"))
         {
-            playerTwoSixesScore = playerTwoSixesScore+1;
+            playerTwoSixesScore = playerTwoSixesScore+6;
+            playerTwoTotalScore = playerTwoTotalScore+6;
+            playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
         }
         if (five.getText().equals("6"))
         {
-            playerTwoSixesScore = playerTwoSixesScore+1;
+            playerTwoSixesScore = playerTwoSixesScore+6;
+            playerTwoTotalScore = playerTwoTotalScore+6;
+            playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
         }
         
         playerTwoSixesOut.setText(String.valueOf(playerTwoSixesScore));
@@ -2032,9 +2427,12 @@ public class GUI extends javax.swing.JFrame {
         int fourReg = Integer.parseInt(four.getText());
         int fiveReg = Integer.parseInt(five.getText());
         
-        playerOne3okScore = oneReg+twoReg+threeReg+fourReg+fiveReg;
+        playerOne3okScore = playerOne3okScore + oneReg+twoReg+threeReg+fourReg+fiveReg;
         
         playerOne3okOut.setText(String.valueOf(playerOne3okScore));
+        
+        playerOneTotalScore = playerOneTotalScore + oneReg+twoReg+threeReg+fourReg+fiveReg;
+        playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         
         playerOneAces.setEnabled(false);
         playerOneTwos.setEnabled(false);
@@ -2059,9 +2457,12 @@ public class GUI extends javax.swing.JFrame {
         int fourReg = Integer.parseInt(four.getText());
         int fiveReg = Integer.parseInt(five.getText());
         
-        playerOneSmallStraightScore = oneReg+twoReg+threeReg+fourReg+fiveReg;
+        playerOneSmallStraightScore = playerOneSmallStraightScore + oneReg+twoReg+threeReg+fourReg+fiveReg;
             
         playerOneSmallStraightOut.setText(String.valueOf(playerOneSmallStraightScore));
+        
+        playerOneTotalScore = playerOneTotalScore + oneReg+twoReg+threeReg+fourReg+fiveReg;
+        playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         
         playerOneAces.setEnabled(false);
         playerOneTwos.setEnabled(false);
@@ -2086,9 +2487,12 @@ public class GUI extends javax.swing.JFrame {
         int fourReg = Integer.parseInt(four.getText());
         int fiveReg = Integer.parseInt(five.getText());
         
-        playerOneLargeStraightScore = oneReg+twoReg+threeReg+fourReg+fiveReg;
+        playerOneLargeStraightScore = playerOneLargeStraightScore + oneReg+twoReg+threeReg+fourReg+fiveReg;
         
         playerOneLargeStraightOut.setText(String.valueOf(playerOneLargeStraight));
+        
+        playerOneTotalScore = playerOneTotalScore + oneReg+twoReg+threeReg+fourReg+fiveReg;
+        playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         
         playerOneAces.setEnabled(false);
         playerOneTwos.setEnabled(false);
@@ -2113,9 +2517,12 @@ public class GUI extends javax.swing.JFrame {
         int fourReg = Integer.parseInt(four.getText());
         int fiveReg = Integer.parseInt(five.getText());
         
-        playerOneYahtzeeScore = oneReg+twoReg+threeReg+fourReg+fiveReg;
+        playerOneYahtzeeScore = playerOneYahtzeeScore + oneReg+twoReg+threeReg+fourReg+fiveReg;
         
         playerOneYahtzeeOut.setText(String.valueOf(playerOneYahtzeeScore));
+        
+        playerOneTotalScore = playerOneTotalScore + oneReg+twoReg+threeReg+fourReg+fiveReg;
+        playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         
         playerOneAces.setEnabled(false);
         playerOneTwos.setEnabled(false);
@@ -2140,9 +2547,12 @@ public class GUI extends javax.swing.JFrame {
         int fourReg = Integer.parseInt(four.getText());
         int fiveReg = Integer.parseInt(five.getText());
         
-        playerOne4okScore = oneReg+twoReg+threeReg+fourReg+fiveReg;
+        playerOne4okScore = playerOne4okScore + oneReg+twoReg+threeReg+fourReg+fiveReg;
         
         playerOne4okOut.setText(String.valueOf(playerOne4okScore));
+        
+        playerOneTotalScore = playerOneTotalScore + oneReg+twoReg+threeReg+fourReg+fiveReg;
+        playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         
         playerOneAces.setEnabled(false);
         playerOneTwos.setEnabled(false);
@@ -2167,9 +2577,12 @@ public class GUI extends javax.swing.JFrame {
         int fourReg = Integer.parseInt(four.getText());
         int fiveReg = Integer.parseInt(five.getText());
         
-        playerOneFullHouseScore = oneReg+twoReg+threeReg+fourReg+fiveReg;
+        playerOneFullHouseScore = playerOneFullHouseScore + oneReg+twoReg+threeReg+fourReg+fiveReg;
         
         playerOneFullHouseOut.setText(String.valueOf(playerOneFullHouseScore));
+        
+        playerOneTotalScore = playerOneTotalScore + oneReg+twoReg+threeReg+fourReg+fiveReg;
+        playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         
         playerOneAces.setEnabled(false);
         playerOneTwos.setEnabled(false);
@@ -2194,9 +2607,12 @@ public class GUI extends javax.swing.JFrame {
         int fourReg = Integer.parseInt(four.getText());
         int fiveReg = Integer.parseInt(five.getText());
         
-        playerOneChanceScore = oneReg+twoReg+threeReg+fourReg+fiveReg;
+        playerOneChanceScore = playerOneChanceScore + oneReg+twoReg+threeReg+fourReg+fiveReg;
         
         playerOneChanceOut.setText(String.valueOf(playerOneChanceScore));
+        
+        playerOneTotalScore = playerOneTotalScore + oneReg+twoReg+threeReg+fourReg+fiveReg;
+        playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
         
         playerOneAces.setEnabled(false);
         playerOneTwos.setEnabled(false);
@@ -2221,9 +2637,12 @@ public class GUI extends javax.swing.JFrame {
         int fourReg = Integer.parseInt(four.getText());
         int fiveReg = Integer.parseInt(five.getText());
         
-        playerTwo3okScore = oneReg+twoReg+threeReg+fourReg+fiveReg;
+        playerTwo3okScore = playerTwo3okScore + oneReg+twoReg+threeReg+fourReg+fiveReg;
         
         playerTwo3okOut.setText(String.valueOf(playerTwo3okScore));
+        
+        playerTwoTotalScore = playerTwoTotalScore + oneReg+twoReg+threeReg+fourReg+fiveReg;
+        playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
         
         playerTwoAces.setEnabled(false);
         playerTwoTwos.setEnabled(false);
@@ -2247,9 +2666,12 @@ public class GUI extends javax.swing.JFrame {
         int fourReg = Integer.parseInt(four.getText());
         int fiveReg = Integer.parseInt(five.getText());
         
-        playerTwo4okScore = oneReg+twoReg+threeReg+fourReg+fiveReg;
+        playerTwo4okScore = playerTwo4okScore + oneReg+twoReg+threeReg+fourReg+fiveReg;
         
         playerTwo4okOut.setText(String.valueOf(playerTwo4okScore));
+        
+        playerTwoTotalScore = playerTwoTotalScore + oneReg+twoReg+threeReg+fourReg+fiveReg;
+        playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
         
         playerTwoAces.setEnabled(false);
         playerTwoTwos.setEnabled(false);
@@ -2265,6 +2687,156 @@ public class GUI extends javax.swing.JFrame {
         playerTwoYahtzee.setEnabled(false);
         playerTwoChance.setEnabled(false);
     }//GEN-LAST:event_playerTwo4okActionPerformed
+
+    private void playerTwoFullHouseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerTwoFullHouseActionPerformed
+        
+        int oneReg = Integer.parseInt(one.getText());
+        int twoReg = Integer.parseInt(two.getText());
+        int threeReg = Integer.parseInt(three.getText());
+        int fourReg = Integer.parseInt(four.getText());
+        int fiveReg = Integer.parseInt(five.getText());
+        
+        playerTwoFullHouseScore = playerTwoFullHouseScore + oneReg+twoReg+threeReg+fourReg+fiveReg;
+        
+        playerTwoFullHouseOut.setText(String.valueOf(playerTwoFullHouseScore));
+        
+        playerTwoTotalScore = playerTwoTotalScore + oneReg+twoReg+threeReg+fourReg+fiveReg;
+        playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
+        
+        playerTwoAces.setEnabled(false);
+        playerTwoTwos.setEnabled(false);
+        playerTwoThrees.setEnabled(false);
+        playerTwoFours.setEnabled(false);
+        playerTwoFives.setEnabled(false);
+        playerTwoSixes.setEnabled(false);
+        playerTwoSmallStraight.setEnabled(false);
+        playerTwoLargeStraight.setEnabled(false);
+        playerTwo3ok.setEnabled(false);
+        playerTwo4ok.setEnabled(false);
+        playerTwoFullHouse.setEnabled(false);
+        playerTwoYahtzee.setEnabled(false);
+        playerTwoChance.setEnabled(false);
+    }//GEN-LAST:event_playerTwoFullHouseActionPerformed
+
+    private void playerTwoSmallStraightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerTwoSmallStraightActionPerformed
+        
+        int oneReg = Integer.parseInt(one.getText());
+        int twoReg = Integer.parseInt(two.getText());
+        int threeReg = Integer.parseInt(three.getText());
+        int fourReg = Integer.parseInt(four.getText());
+        int fiveReg = Integer.parseInt(five.getText());
+        
+        playerTwoSmallStraightScore = playerTwoSmallStraightScore + oneReg+twoReg+threeReg+fourReg+fiveReg;
+            
+        playerTwoSmallStraightOut.setText(String.valueOf(playerTwoSmallStraightScore));
+        
+        playerTwoTotalScore = playerTwoTotalScore + oneReg+twoReg+threeReg+fourReg+fiveReg;
+        playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
+        
+        playerTwoAces.setEnabled(false);
+        playerTwoTwos.setEnabled(false);
+        playerTwoThrees.setEnabled(false);
+        playerTwoFours.setEnabled(false);
+        playerTwoFives.setEnabled(false);
+        playerTwoSixes.setEnabled(false);
+        playerTwoSmallStraight.setEnabled(false);
+        playerTwoLargeStraight.setEnabled(false);
+        playerTwo3ok.setEnabled(false);
+        playerTwo4ok.setEnabled(false);
+        playerTwoFullHouse.setEnabled(false);
+        playerTwoYahtzee.setEnabled(false);
+        playerTwoChance.setEnabled(false);
+    }//GEN-LAST:event_playerTwoSmallStraightActionPerformed
+
+    private void playerTwoLargeStraightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerTwoLargeStraightActionPerformed
+        
+        int oneReg = Integer.parseInt(one.getText());
+        int twoReg = Integer.parseInt(two.getText());
+        int threeReg = Integer.parseInt(three.getText());
+        int fourReg = Integer.parseInt(four.getText());
+        int fiveReg = Integer.parseInt(five.getText());
+        
+        playerTwoLargeStraightScore = playerTwoLargeStraightScore + oneReg+twoReg+threeReg+fourReg+fiveReg;
+        
+        playerTwoLargeStraightOut.setText(String.valueOf(playerTwoLargeStraight));
+        
+        playerTwoTotalScore = playerTwoTotalScore + oneReg+twoReg+threeReg+fourReg+fiveReg;
+        playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
+        
+        playerTwoAces.setEnabled(false);
+        playerTwoTwos.setEnabled(false);
+        playerTwoThrees.setEnabled(false);
+        playerTwoFours.setEnabled(false);
+        playerTwoFives.setEnabled(false);
+        playerTwoSixes.setEnabled(false);
+        playerTwoSmallStraight.setEnabled(false);
+        playerTwoLargeStraight.setEnabled(false);
+        playerTwo3ok.setEnabled(false);
+        playerTwo4ok.setEnabled(false);
+        playerTwoFullHouse.setEnabled(false);
+        playerTwoYahtzee.setEnabled(false);
+        playerTwoChance.setEnabled(false);
+    }//GEN-LAST:event_playerTwoLargeStraightActionPerformed
+
+    private void playerTwoChanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerTwoChanceActionPerformed
+        
+        int oneReg = Integer.parseInt(one.getText());
+        int twoReg = Integer.parseInt(two.getText());
+        int threeReg = Integer.parseInt(three.getText());
+        int fourReg = Integer.parseInt(four.getText());
+        int fiveReg = Integer.parseInt(five.getText());
+        
+        playerTwoChanceScore = playerTwoChanceScore + oneReg+twoReg+threeReg+fourReg+fiveReg;
+        
+        playerTwoChanceOut.setText(String.valueOf(playerTwoChanceScore));
+        
+        playerTwoTotalScore = playerTwoTotalScore + oneReg+twoReg+threeReg+fourReg+fiveReg;
+        playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
+        
+        playerTwoAces.setEnabled(false);
+        playerTwoTwos.setEnabled(false);
+        playerTwoThrees.setEnabled(false);
+        playerTwoFours.setEnabled(false);
+        playerTwoFives.setEnabled(false);
+        playerTwoSixes.setEnabled(false);
+        playerTwoSmallStraight.setEnabled(false);
+        playerTwoLargeStraight.setEnabled(false);
+        playerTwo3ok.setEnabled(false);
+        playerTwo4ok.setEnabled(false);
+        playerTwoFullHouse.setEnabled(false);
+        playerTwoYahtzee.setEnabled(false);
+        playerTwoChance.setEnabled(false);
+    }//GEN-LAST:event_playerTwoChanceActionPerformed
+
+    private void playerTwoYahtzeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerTwoYahtzeeActionPerformed
+        
+        int oneReg = Integer.parseInt(one.getText());
+        int twoReg = Integer.parseInt(two.getText());
+        int threeReg = Integer.parseInt(three.getText());
+        int fourReg = Integer.parseInt(four.getText());
+        int fiveReg = Integer.parseInt(five.getText());
+        
+        playerTwoYahtzeeScore = playerTwoYahtzeeScore + oneReg+twoReg+threeReg+fourReg+fiveReg;
+        
+        playerTwoYahtzeeOut.setText(String.valueOf(playerTwoYahtzeeScore));
+        
+        playerTwoTotalScore = playerTwoTotalScore + oneReg+twoReg+threeReg+fourReg+fiveReg;
+        playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
+        
+        playerTwoAces.setEnabled(false);
+        playerTwoTwos.setEnabled(false);
+        playerTwoThrees.setEnabled(false);
+        playerTwoFours.setEnabled(false);
+        playerTwoFives.setEnabled(false);
+        playerTwoSixes.setEnabled(false);
+        playerTwoSmallStraight.setEnabled(false);
+        playerTwoLargeStraight.setEnabled(false);
+        playerTwo3ok.setEnabled(false);
+        playerTwo4ok.setEnabled(false);
+        playerTwoFullHouse.setEnabled(false);
+        playerTwoYahtzee.setEnabled(false);
+        playerTwoChance.setEnabled(false);
+    }//GEN-LAST:event_playerTwoYahtzeeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2307,7 +2879,6 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel joeMama;
     private javax.swing.JTextField one;
     private javax.swing.JButton playerOne3ok;
     private javax.swing.JTextField playerOne3okOut;
@@ -2332,6 +2903,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JTextField playerOneSmallStraightOut;
     private javax.swing.JButton playerOneThrees;
     private javax.swing.JTextField playerOneThreesOut;
+    private javax.swing.JTextField playerOneTotalScoreOut;
     private javax.swing.JButton playerOneTwos;
     private javax.swing.JTextField playerOneTwosOut;
     private javax.swing.JButton playerOneYahtzee;
@@ -2359,11 +2931,13 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JTextField playerTwoSmallStraightOut;
     private javax.swing.JButton playerTwoThrees;
     private javax.swing.JTextField playerTwoThreesOut;
+    private javax.swing.JTextField playerTwoTotalScoreOut;
     private javax.swing.JButton playerTwoTwos;
     private javax.swing.JTextField playerTwoTwosOut;
     private javax.swing.JButton playerTwoYahtzee;
     private javax.swing.JTextField playerTwoYahtzeeOut;
     private javax.swing.JTextField three;
     private javax.swing.JTextField two;
+    private javax.swing.JLabel winnerOutput;
     // End of variables declaration//GEN-END:variables
 }
