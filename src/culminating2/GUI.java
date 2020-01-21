@@ -20,6 +20,134 @@ public class GUI extends javax.swing.JFrame {
         initComponents();
     }
     
+    public boolean fullHouseCheck()
+    {
+        int numbers[] = new int[5];
+        
+        numbers[0] = Integer.parseInt(one.getText());
+        numbers[1] = Integer.parseInt(two.getText());
+        numbers[2] = Integer.parseInt(three.getText());
+        numbers[3] = Integer.parseInt(four.getText());
+        numbers[4] = Integer.parseInt(five.getText());
+        
+        boolean exit = false;
+        int temp;
+        
+        while(exit == false) //repeat until numbers are sorted
+        {
+            exit = true;
+            for(int i=0 ; i<numbers.length-1 ; i++) //Scan the length of the array for numbers out of place
+            {
+                if(numbers[i]>numbers[i+1]) //If number to the left is less than number to the right
+                {
+                    //Swap numbers
+                    temp = numbers[i+1];
+                    numbers[i+1]=numbers[i];
+                    numbers[i] = temp;
+                    exit = false;
+                }
+            }
+        }
+        if(numbers[0]==numbers[1] && numbers[2]==numbers[3] && numbers[3]==numbers[4] && numbers[2] == numbers[4])
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public boolean yahtzeeCheck()
+    {
+        int oneReg = Integer.parseInt(one.getText());
+        int twoReg = Integer.parseInt(two.getText());
+        int threeReg = Integer.parseInt(three.getText());
+        int fourReg = Integer.parseInt(four.getText());
+        int fiveReg = Integer.parseInt(five.getText());
+        
+        if(oneReg == twoReg && oneReg == threeReg && oneReg == fourReg && oneReg == fiveReg)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public boolean largeStraightCheck()
+    {
+        int numbers[] = new int[5];
+        
+        numbers[0] = Integer.parseInt(one.getText());
+        numbers[1] = Integer.parseInt(two.getText());
+        numbers[2] = Integer.parseInt(three.getText());
+        numbers[3] = Integer.parseInt(four.getText());
+        numbers[4] = Integer.parseInt(five.getText());
+        
+        boolean exit = false;
+        int temp;
+        
+        while(exit == false) //repeat until numbers are sorted
+        {
+            exit = true;
+            for(int i=0 ; i<numbers.length-1 ; i++) //Scan the length of the array for numbers out of place
+            {
+                if(numbers[i]>numbers[i+1]) //If number to the left is less than number to the right
+                {
+                    //Swap numbers
+                    temp = numbers[i+1];
+                    numbers[i+1]=numbers[i];
+                    numbers[i] = temp;
+                    exit = false;
+                }
+            }
+        }
+        
+        if(numbers[0] == numbers[1] || numbers[0] == numbers[2] || numbers[0] == numbers[3] || numbers[0] == numbers[4])
+        {
+            numbers[0] = -1;
+        }
+        if(numbers[1] == numbers[0] || numbers[1] == numbers[2] || numbers[1] == numbers[3] || numbers[1] == numbers[4])
+        {
+            numbers[1] = -1;
+        }
+        if(numbers[2] == numbers[0] || numbers[2] == numbers[1] || numbers[2] == numbers[3] || numbers[2] == numbers[4])
+        {
+            numbers[2] = -1;
+        }
+        if(numbers[3] == numbers[0] || numbers[3] == numbers[1] || numbers[3] == numbers[2] || numbers[3] == numbers[4])
+        {
+            numbers[3] = -1;
+        }
+        if(numbers[4] == numbers[0] || numbers[4] == numbers[1] || numbers[4] == numbers[2] || numbers[4] == numbers[3])
+        {
+            numbers[4] = -1;
+        }
+        
+        String finalValue = "";
+        
+        for(int i = 0; i <= 4; i++)
+        {
+            if(numbers[i] == -1)
+            {
+                
+            }
+            else
+            {
+                finalValue += String.valueOf(numbers[i]);
+            }
+        }
+        
+        joeMama.setText(finalValue);
+        if(finalValue.equals("12345")||finalValue.equals("23456"))
+        {
+            return true;
+        }
+        else
+        {
+        return false;
+        }
+    }
     public boolean smallStraightCheck()
     {
         int numbers[] = new int[5];
@@ -465,12 +593,26 @@ public class GUI extends javax.swing.JFrame {
     int playerOneFoursScore = 0;
     int playerOneFivesScore = 0;
     int playerOneSixesScore = 0;
+    int playerOne3okScore = 0;
+    int playerOne4okScore = 0;
+    int playerOneSmallStraightScore = 0;
+    int playerOneLargeStraightScore = 0;
+    int playerOneYahtzeeScore = 0;
+    int playerOneFullHouseScore = 0;
+    int playerOneChanceScore = 0;
     int playerTwoAcesScore = 0;
     int playerTwoTwosScore = 0;
     int playerTwoThreesScore = 0;
     int playerTwoFoursScore = 0;
     int playerTwoFivesScore = 0;
     int playerTwoSixesScore = 0;
+    int playerTwo3okScore = 0;
+    int playerTwo4okScore = 0;
+    int playerTwoSmallStraightScore = 0;
+    int playerTwoLargeStraightScore = 0;
+    int playerTwoYahtzeeScore = 0;
+    int playerTwoFullHouseScore = 0;
+    int playerTwoChanceScore = 0;
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -764,6 +906,11 @@ public class GUI extends javax.swing.JFrame {
 
         playerOne4ok.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerOne4ok.setText("4 of a Kind");
+        playerOne4ok.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playerOne4okActionPerformed(evt);
+            }
+        });
 
         playerOne4okOut.setEditable(false);
         playerOne4okOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -777,6 +924,11 @@ public class GUI extends javax.swing.JFrame {
 
         playerOneFullHouse.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerOneFullHouse.setText("Full House");
+        playerOneFullHouse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playerOneFullHouseActionPerformed(evt);
+            }
+        });
 
         playerOneSmallStraightOut.setEditable(false);
         playerOneSmallStraightOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -798,6 +950,11 @@ public class GUI extends javax.swing.JFrame {
 
         playerOneLargeStraight.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerOneLargeStraight.setText("lg. straight");
+        playerOneLargeStraight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playerOneLargeStraightActionPerformed(evt);
+            }
+        });
 
         playerOneChanceOut.setEditable(false);
         playerOneChanceOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -806,6 +963,11 @@ public class GUI extends javax.swing.JFrame {
 
         playerOneChance.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerOneChance.setText("Chance");
+        playerOneChance.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playerOneChanceActionPerformed(evt);
+            }
+        });
 
         playerOneYahtzeeOut.setEditable(false);
         playerOneYahtzeeOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -814,6 +976,11 @@ public class GUI extends javax.swing.JFrame {
 
         playerOneYahtzee.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerOneYahtzee.setText("Yahtzee");
+        playerOneYahtzee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playerOneYahtzeeActionPerformed(evt);
+            }
+        });
 
         playerTwo3okOut.setEditable(false);
         playerTwo3okOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -822,6 +989,11 @@ public class GUI extends javax.swing.JFrame {
 
         playerTwo3ok.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerTwo3ok.setText("3 of a Kind");
+        playerTwo3ok.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playerTwo3okActionPerformed(evt);
+            }
+        });
 
         playerTwo4okOut.setEditable(false);
         playerTwo4okOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -830,6 +1002,11 @@ public class GUI extends javax.swing.JFrame {
 
         playerTwo4ok.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerTwo4ok.setText("4 of a Kind");
+        playerTwo4ok.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playerTwo4okActionPerformed(evt);
+            }
+        });
 
         playerTwoFullHouseOut.setEditable(false);
         playerTwoFullHouseOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -1184,6 +1361,9 @@ public class GUI extends javax.swing.JFrame {
             playerTwoFives.setEnabled(true);
             playerTwoSixes.setEnabled(true);
             playerTwoSmallStraight.setEnabled(true);
+            playerTwoSmallStraight.setEnabled(true);
+            playerTwoYahtzee.setEnabled(true);
+            playerTwoFullHouse.setEnabled(true);
             playerOneAces.setEnabled(false);
             playerOneTwos.setEnabled(false);
             playerOneThrees.setEnabled(false);
@@ -1191,6 +1371,9 @@ public class GUI extends javax.swing.JFrame {
             playerOneFives.setEnabled(false);
             playerOneSixes.setEnabled(false);
             playerOneSmallStraight.setEnabled(false);
+            playerOneLargeStraight.setEnabled(false);
+            playerOneYahtzee.setEnabled(false);
+            playerOneFullHouse.setEnabled(false);
             rollCount = 3;
             playerOneRoll.setText("Roll 3");
             one.setText("0");
@@ -1285,6 +1468,30 @@ public class GUI extends javax.swing.JFrame {
         {
             playerOneSmallStraight.setEnabled(false);
         }
+        if(largeStraightCheck() == true)
+        {
+            playerOneLargeStraight.setEnabled(true);
+        }
+        if(largeStraightCheck() == false)
+        {
+            playerOneLargeStraight.setEnabled(false);
+        }
+        if(yahtzeeCheck() == true)
+        {
+            playerOneYahtzee.setEnabled(true);
+        }
+        if(yahtzeeCheck() == false)
+        {
+            playerOneYahtzee.setEnabled(false);
+        }
+        if(fullHouseCheck() == true)
+        {
+            playerOneFullHouse.setEnabled(true);
+        }
+        if(fullHouseCheck() == false)
+        {
+            playerOneFullHouse.setEnabled(false);
+        }
         }
         
     }//GEN-LAST:event_playerOneRollActionPerformed
@@ -1302,6 +1509,9 @@ public class GUI extends javax.swing.JFrame {
             playerTwoFives.setEnabled(false);
             playerTwoSixes.setEnabled(false);
             playerTwoSmallStraight.setEnabled(false);
+            playerTwoLargeStraight.setEnabled(false);
+            playerTwoYahtzee.setEnabled(false);
+            playerTwoFullHouse.setEnabled(false);
             playerOneAces.setEnabled(true);
             playerOneTwos.setEnabled(true);
             playerOneThrees.setEnabled(true);
@@ -1309,6 +1519,9 @@ public class GUI extends javax.swing.JFrame {
             playerOneFives.setEnabled(true);
             playerOneSixes.setEnabled(true);
             playerOneSmallStraight.setEnabled(true);
+            playerOneLargeStraight.setEnabled(true);
+            playerOneYahtzee.setEnabled(true);
+            playerOneFullHouse.setEnabled(true);
             rollCount = 3;
             playerTwoRoll.setText("Roll 3");
             one.setText("0");
@@ -1399,6 +1612,30 @@ public class GUI extends javax.swing.JFrame {
         {
             playerTwoSmallStraight.setEnabled(false);
         }
+        if(largeStraightCheck() == false)
+        {
+            playerTwoLargeStraight.setEnabled(false);
+        }
+        if(largeStraightCheck() == true)
+        {
+            playerTwoLargeStraight.setEnabled(true);
+        }
+        if(yahtzeeCheck() == true)
+        {
+            playerTwoYahtzee.setEnabled(true);
+        }
+        if(yahtzeeCheck() == false)
+        {
+            playerTwoYahtzee.setEnabled(false);
+        }
+        if(fullHouseCheck() == true)
+        {
+            playerTwoFullHouse.setEnabled(true);
+        }
+        if(fullHouseCheck() == false)
+        {
+            playerTwoFullHouse.setEnabled(false);
+        }
         }
     }//GEN-LAST:event_playerTwoRollActionPerformed
 
@@ -1406,23 +1643,23 @@ public class GUI extends javax.swing.JFrame {
         
         if (one.getText().equals("1"))
         {
-            playerOneAcesScore = playerOneAcesScore+1;
+            playerOneAcesScore = playerOneAcesScore+2;
         }
         if (two.getText().equals("1"))
         {
-            playerOneAcesScore = playerOneAcesScore+1;
+            playerOneAcesScore = playerOneAcesScore+2;
         }
         if (three.getText().equals("1"))
         {
-            playerOneAcesScore = playerOneAcesScore+1;
+            playerOneAcesScore = playerOneAcesScore+2;
         }
         if (four.getText().equals("1"))
         {
-            playerOneAcesScore = playerOneAcesScore+1;
+            playerOneAcesScore = playerOneAcesScore+2;
         }
         if (five.getText().equals("1"))
         {
-            playerOneAcesScore = playerOneAcesScore+1;
+            playerOneAcesScore = playerOneAcesScore+2;
         }
         
         playerOneAcesOut.setText(String.valueOf(playerOneAcesScore));
@@ -1432,6 +1669,13 @@ public class GUI extends javax.swing.JFrame {
         playerOneFours.setEnabled(false);
         playerOneFives.setEnabled(false);
         playerOneSixes.setEnabled(false);
+        playerOneSmallStraight.setEnabled(false);
+        playerOneLargeStraight.setEnabled(false);
+        playerOne3ok.setEnabled(false);
+        playerOne4ok.setEnabled(false);
+        playerOneFullHouse.setEnabled(false);
+        playerOneYahtzee.setEnabled(false);
+        playerOneChance.setEnabled(false);
     }//GEN-LAST:event_playerOneAcesActionPerformed
 
     private void playerOneTwosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerOneTwosActionPerformed
@@ -1470,23 +1714,23 @@ public class GUI extends javax.swing.JFrame {
         
         if (one.getText().equals("3"))
         {
-            playerOneThreesScore = playerOneThreesScore+1;
+            playerOneThreesScore = playerOneThreesScore+3;
         }
         if (two.getText().equals("3"))
         {
-            playerOneThreesScore = playerOneThreesScore+1;
+            playerOneThreesScore = playerOneThreesScore+3;
         }
         if (three.getText().equals("3"))
         {
-            playerOneThreesScore = playerOneThreesScore+1;
+            playerOneThreesScore = playerOneThreesScore+3;
         }
         if (four.getText().equals("3"))
         {
-            playerOneThreesScore = playerOneThreesScore+1;
+            playerOneThreesScore = playerOneThreesScore+3;
         }
         if (five.getText().equals("3"))
         {
-            playerOneThreesScore = playerOneThreesScore+1;
+            playerOneThreesScore = playerOneThreesScore+3;
         }
         
         playerOneThreesOut.setText(String.valueOf(playerOneThreesScore));
@@ -1502,23 +1746,23 @@ public class GUI extends javax.swing.JFrame {
         
         if (one.getText().equals("4"))
         {
-            playerOneFoursScore = playerOneFoursScore+1;
+            playerOneFoursScore = playerOneFoursScore+4;
         }
         if (two.getText().equals("4"))
         {
-            playerOneFoursScore = playerOneFoursScore+1;
+            playerOneFoursScore = playerOneFoursScore+4;
         }
         if (three.getText().equals("4"))
         {
-            playerOneFoursScore = playerOneFoursScore+1;
+            playerOneFoursScore = playerOneFoursScore+4;
         }
         if (four.getText().equals("4"))
         {
-            playerOneFoursScore = playerOneFoursScore+1;
+            playerOneFoursScore = playerOneFoursScore+4;
         }
         if (five.getText().equals("4"))
         {
-            playerOneFoursScore = playerOneFoursScore+1;
+            playerOneFoursScore = playerOneFoursScore+4;
         }
         
         playerOneFoursOut.setText(String.valueOf(playerOneFoursScore));
@@ -1534,23 +1778,23 @@ public class GUI extends javax.swing.JFrame {
         
         if (one.getText().equals("5"))
         {
-            playerOneFivesScore = playerOneFivesScore+1;
+            playerOneFivesScore = playerOneFivesScore+5;
         }
         if (two.getText().equals("5"))
         {
-            playerOneFivesScore = playerOneFivesScore+1;
+            playerOneFivesScore = playerOneFivesScore+5;
         }
         if (three.getText().equals("5"))
         {
-            playerOneFivesScore = playerOneFivesScore+1;
+            playerOneFivesScore = playerOneFivesScore+5;
         }
         if (four.getText().equals("5"))
         {
-            playerOneFivesScore = playerOneFivesScore+1;
+            playerOneFivesScore = playerOneFivesScore+5;
         }
         if (five.getText().equals("5"))
         {
-            playerOneFivesScore = playerOneFivesScore+1;
+            playerOneFivesScore = playerOneFivesScore+5;
         }
         
         playerOneFivesOut.setText(String.valueOf(playerOneFivesScore));
@@ -1566,23 +1810,23 @@ public class GUI extends javax.swing.JFrame {
         
         if (one.getText().equals("6"))
         {
-            playerOneSixesScore = playerOneSixesScore+1;
+            playerOneSixesScore = playerOneSixesScore+6;
         }
         if (two.getText().equals("6"))
         {
-            playerOneSixesScore = playerOneSixesScore+1;
+            playerOneSixesScore = playerOneSixesScore+6;
         }
         if (three.getText().equals("6"))
         {
-            playerOneSixesScore = playerOneSixesScore+1;
+            playerOneSixesScore = playerOneSixesScore+6;
         }
         if (four.getText().equals("6"))
         {
-            playerOneSixesScore = playerOneSixesScore+1;
+            playerOneSixesScore = playerOneSixesScore+6;
         }
         if (five.getText().equals("6"))
         {
-            playerOneSixesScore = playerOneSixesScore+1;
+            playerOneSixesScore = playerOneSixesScore+6;
         }
         
         playerOneSixesOut.setText(String.valueOf(playerOneSixesScore));
@@ -1781,14 +2025,246 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_playerTwoSixesActionPerformed
 
     private void playerOne3okActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerOne3okActionPerformed
-        // TODO add your handling code here:
+        
+        int oneReg = Integer.parseInt(one.getText());
+        int twoReg = Integer.parseInt(two.getText());
+        int threeReg = Integer.parseInt(three.getText());
+        int fourReg = Integer.parseInt(four.getText());
+        int fiveReg = Integer.parseInt(five.getText());
+        
+        playerOne3okScore = oneReg+twoReg+threeReg+fourReg+fiveReg;
+        
+        playerOne3okOut.setText(String.valueOf(playerOne3okScore));
+        
+        playerOneAces.setEnabled(false);
+        playerOneTwos.setEnabled(false);
+        playerOneThrees.setEnabled(false);
+        playerOneFours.setEnabled(false);
+        playerOneFives.setEnabled(false);
+        playerOneSixes.setEnabled(false);
+        playerOneSmallStraight.setEnabled(false);
+        playerOneLargeStraight.setEnabled(false);
+        playerOne3ok.setEnabled(false);
+        playerOne4ok.setEnabled(false);
+        playerOneFullHouse.setEnabled(false);
+        playerOneYahtzee.setEnabled(false);
+        playerOneChance.setEnabled(false);
     }//GEN-LAST:event_playerOne3okActionPerformed
 
     private void playerOneSmallStraightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerOneSmallStraightActionPerformed
         
-        playerOneSmallStraight.setEnabled(false);
+        int oneReg = Integer.parseInt(one.getText());
+        int twoReg = Integer.parseInt(two.getText());
+        int threeReg = Integer.parseInt(three.getText());
+        int fourReg = Integer.parseInt(four.getText());
+        int fiveReg = Integer.parseInt(five.getText());
+        
+        playerOneSmallStraightScore = oneReg+twoReg+threeReg+fourReg+fiveReg;
             
+        playerOneSmallStraightOut.setText(String.valueOf(playerOneSmallStraightScore));
+        
+        playerOneAces.setEnabled(false);
+        playerOneTwos.setEnabled(false);
+        playerOneThrees.setEnabled(false);
+        playerOneFours.setEnabled(false);
+        playerOneFives.setEnabled(false);
+        playerOneSixes.setEnabled(false);
+        playerOneSmallStraight.setEnabled(false);
+        playerOneLargeStraight.setEnabled(false);
+        playerOne3ok.setEnabled(false);
+        playerOne4ok.setEnabled(false);
+        playerOneFullHouse.setEnabled(false);
+        playerOneYahtzee.setEnabled(false);
+        playerOneChance.setEnabled(false);
     }//GEN-LAST:event_playerOneSmallStraightActionPerformed
+
+    private void playerOneLargeStraightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerOneLargeStraightActionPerformed
+        
+        int oneReg = Integer.parseInt(one.getText());
+        int twoReg = Integer.parseInt(two.getText());
+        int threeReg = Integer.parseInt(three.getText());
+        int fourReg = Integer.parseInt(four.getText());
+        int fiveReg = Integer.parseInt(five.getText());
+        
+        playerOneLargeStraightScore = oneReg+twoReg+threeReg+fourReg+fiveReg;
+        
+        playerOneLargeStraightOut.setText(String.valueOf(playerOneLargeStraight));
+        
+        playerOneAces.setEnabled(false);
+        playerOneTwos.setEnabled(false);
+        playerOneThrees.setEnabled(false);
+        playerOneFours.setEnabled(false);
+        playerOneFives.setEnabled(false);
+        playerOneSixes.setEnabled(false);
+        playerOneSmallStraight.setEnabled(false);
+        playerOneLargeStraight.setEnabled(false);
+        playerOne3ok.setEnabled(false);
+        playerOne4ok.setEnabled(false);
+        playerOneFullHouse.setEnabled(false);
+        playerOneYahtzee.setEnabled(false);
+        playerOneChance.setEnabled(false);
+    }//GEN-LAST:event_playerOneLargeStraightActionPerformed
+
+    private void playerOneYahtzeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerOneYahtzeeActionPerformed
+        
+        int oneReg = Integer.parseInt(one.getText());
+        int twoReg = Integer.parseInt(two.getText());
+        int threeReg = Integer.parseInt(three.getText());
+        int fourReg = Integer.parseInt(four.getText());
+        int fiveReg = Integer.parseInt(five.getText());
+        
+        playerOneYahtzeeScore = oneReg+twoReg+threeReg+fourReg+fiveReg;
+        
+        playerOneYahtzeeOut.setText(String.valueOf(playerOneYahtzeeScore));
+        
+        playerOneAces.setEnabled(false);
+        playerOneTwos.setEnabled(false);
+        playerOneThrees.setEnabled(false);
+        playerOneFours.setEnabled(false);
+        playerOneFives.setEnabled(false);
+        playerOneSixes.setEnabled(false);
+        playerOneSmallStraight.setEnabled(false);
+        playerOneLargeStraight.setEnabled(false);
+        playerOne3ok.setEnabled(false);
+        playerOne4ok.setEnabled(false);
+        playerOneFullHouse.setEnabled(false);
+        playerOneYahtzee.setEnabled(false);
+        playerOneChance.setEnabled(false);
+    }//GEN-LAST:event_playerOneYahtzeeActionPerformed
+
+    private void playerOne4okActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerOne4okActionPerformed
+        
+        int oneReg = Integer.parseInt(one.getText());
+        int twoReg = Integer.parseInt(two.getText());
+        int threeReg = Integer.parseInt(three.getText());
+        int fourReg = Integer.parseInt(four.getText());
+        int fiveReg = Integer.parseInt(five.getText());
+        
+        playerOne4okScore = oneReg+twoReg+threeReg+fourReg+fiveReg;
+        
+        playerOne4okOut.setText(String.valueOf(playerOne4okScore));
+        
+        playerOneAces.setEnabled(false);
+        playerOneTwos.setEnabled(false);
+        playerOneThrees.setEnabled(false);
+        playerOneFours.setEnabled(false);
+        playerOneFives.setEnabled(false);
+        playerOneSixes.setEnabled(false);
+        playerOneSmallStraight.setEnabled(false);
+        playerOneLargeStraight.setEnabled(false);
+        playerOne3ok.setEnabled(false);
+        playerOne4ok.setEnabled(false);
+        playerOneFullHouse.setEnabled(false);
+        playerOneYahtzee.setEnabled(false);
+        playerOneChance.setEnabled(false);
+    }//GEN-LAST:event_playerOne4okActionPerformed
+
+    private void playerOneFullHouseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerOneFullHouseActionPerformed
+        
+        int oneReg = Integer.parseInt(one.getText());
+        int twoReg = Integer.parseInt(two.getText());
+        int threeReg = Integer.parseInt(three.getText());
+        int fourReg = Integer.parseInt(four.getText());
+        int fiveReg = Integer.parseInt(five.getText());
+        
+        playerOneFullHouseScore = oneReg+twoReg+threeReg+fourReg+fiveReg;
+        
+        playerOneFullHouseOut.setText(String.valueOf(playerOneFullHouseScore));
+        
+        playerOneAces.setEnabled(false);
+        playerOneTwos.setEnabled(false);
+        playerOneThrees.setEnabled(false);
+        playerOneFours.setEnabled(false);
+        playerOneFives.setEnabled(false);
+        playerOneSixes.setEnabled(false);
+        playerOneSmallStraight.setEnabled(false);
+        playerOneLargeStraight.setEnabled(false);
+        playerOne3ok.setEnabled(false);
+        playerOne4ok.setEnabled(false);
+        playerOneFullHouse.setEnabled(false);
+        playerOneYahtzee.setEnabled(false);
+        playerOneChance.setEnabled(false);
+    }//GEN-LAST:event_playerOneFullHouseActionPerformed
+
+    private void playerOneChanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerOneChanceActionPerformed
+        
+        int oneReg = Integer.parseInt(one.getText());
+        int twoReg = Integer.parseInt(two.getText());
+        int threeReg = Integer.parseInt(three.getText());
+        int fourReg = Integer.parseInt(four.getText());
+        int fiveReg = Integer.parseInt(five.getText());
+        
+        playerOneChanceScore = oneReg+twoReg+threeReg+fourReg+fiveReg;
+        
+        playerOneChanceOut.setText(String.valueOf(playerOneChanceScore));
+        
+        playerOneAces.setEnabled(false);
+        playerOneTwos.setEnabled(false);
+        playerOneThrees.setEnabled(false);
+        playerOneFours.setEnabled(false);
+        playerOneFives.setEnabled(false);
+        playerOneSixes.setEnabled(false);
+        playerOneSmallStraight.setEnabled(false);
+        playerOneLargeStraight.setEnabled(false);
+        playerOne3ok.setEnabled(false);
+        playerOne4ok.setEnabled(false);
+        playerOneFullHouse.setEnabled(false);
+        playerOneYahtzee.setEnabled(false);
+        playerOneChance.setEnabled(false);
+    }//GEN-LAST:event_playerOneChanceActionPerformed
+
+    private void playerTwo3okActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerTwo3okActionPerformed
+        
+        int oneReg = Integer.parseInt(one.getText());
+        int twoReg = Integer.parseInt(two.getText());
+        int threeReg = Integer.parseInt(three.getText());
+        int fourReg = Integer.parseInt(four.getText());
+        int fiveReg = Integer.parseInt(five.getText());
+        
+        playerTwo3okScore = oneReg+twoReg+threeReg+fourReg+fiveReg;
+        
+        playerTwo3okOut.setText(String.valueOf(playerTwo3okScore));
+        
+        playerTwoAces.setEnabled(false);
+        playerTwoTwos.setEnabled(false);
+        playerTwoThrees.setEnabled(false);
+        playerTwoFours.setEnabled(false);
+        playerTwoFives.setEnabled(false);
+        playerTwoSixes.setEnabled(false);
+        playerTwoSmallStraight.setEnabled(false);
+        playerTwoLargeStraight.setEnabled(false);
+        playerTwo3ok.setEnabled(false);
+        playerTwo4ok.setEnabled(false);
+        playerTwoFullHouse.setEnabled(false);
+        playerTwoYahtzee.setEnabled(false);
+        playerTwoChance.setEnabled(false);
+    }//GEN-LAST:event_playerTwo3okActionPerformed
+
+    private void playerTwo4okActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerTwo4okActionPerformed
+        int oneReg = Integer.parseInt(one.getText());
+        int twoReg = Integer.parseInt(two.getText());
+        int threeReg = Integer.parseInt(three.getText());
+        int fourReg = Integer.parseInt(four.getText());
+        int fiveReg = Integer.parseInt(five.getText());
+        
+        playerTwo4okScore = oneReg+twoReg+threeReg+fourReg+fiveReg;
+        
+        playerTwo4okOut.setText(String.valueOf(playerTwo4okScore));
+        
+        playerTwoAces.setEnabled(false);
+        playerTwoTwos.setEnabled(false);
+        playerTwoThrees.setEnabled(false);
+        playerTwoFours.setEnabled(false);
+        playerTwoFives.setEnabled(false);
+        playerTwoSixes.setEnabled(false);
+        playerTwoSmallStraight.setEnabled(false);
+        playerTwoLargeStraight.setEnabled(false);
+        playerTwo3ok.setEnabled(false);
+        playerTwo4ok.setEnabled(false);
+        playerTwoFullHouse.setEnabled(false);
+        playerTwoYahtzee.setEnabled(false);
+        playerTwoChance.setEnabled(false);
+    }//GEN-LAST:event_playerTwo4okActionPerformed
 
     /**
      * @param args the command line arguments

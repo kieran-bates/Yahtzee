@@ -774,6 +774,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="4 of a Kind"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="playerOne4okActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="playerOne4okOut">
           <Properties>
@@ -802,6 +805,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Full House"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="playerOneFullHouseActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="playerOneSmallStraightOut">
           <Properties>
@@ -841,6 +847,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="lg. straight"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="playerOneLargeStraightActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="playerOneChanceOut">
           <Properties>
@@ -859,6 +868,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Chance"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="playerOneChanceActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="playerOneYahtzeeOut">
           <Properties>
@@ -877,6 +889,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Yahtzee"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="playerOneYahtzeeActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="playerTwo3okOut">
           <Properties>
@@ -895,6 +910,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="3 of a Kind"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="playerTwo3okActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="playerTwo4okOut">
           <Properties>
@@ -913,6 +931,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="4 of a Kind"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="playerTwo4okActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="playerTwoFullHouseOut">
           <Properties>
