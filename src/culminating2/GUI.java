@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Kieran Bates
+ * January 22, 2020
+ * This is a 2 player version of 10-round Yahtzee.
  */
 
 package culminating2;
@@ -20,6 +20,10 @@ public class GUI extends javax.swing.JFrame {
         initComponents();
     }
     
+    /**
+     * 
+     * @return 
+     */
     public boolean fullHouseCheck()
     {
         int numbers[] = new int[5];
@@ -1436,13 +1440,13 @@ public class GUI extends javax.swing.JFrame {
             {
                 if(playerOneTotalScore>playerTwoTotalScore)
                 {
-                    winnerOutput.setText("Player One Win!");
+                    winnerOutput.setText("Player One Wins!");
                 }
-                if(playerOneTotalScore<playerTwoTotalScore);
+                if(playerOneTotalScore<playerTwoTotalScore)
                 {
                     winnerOutput.setText("Player Two Wins!");
                 }
-                if(playerOneTotalScore == playerTwoTotalScore);
+                if(playerOneTotalScore == playerTwoTotalScore)
                 {
                     winnerOutput.setText("Tie!");
                 }
@@ -1697,13 +1701,13 @@ public class GUI extends javax.swing.JFrame {
             {
                 if(playerOneTotalScore>playerTwoTotalScore)
                 {
-                    winnerOutput.setText("Player One Win!");
+                    winnerOutput.setText("Player One Wins!");
                 }
-                if(playerOneTotalScore<playerTwoTotalScore);
+                if(playerOneTotalScore<playerTwoTotalScore)
                 {
                     winnerOutput.setText("Player Two Wins!");
                 }
-                if(playerOneTotalScore == playerTwoTotalScore);
+                if(playerOneTotalScore == playerTwoTotalScore)
                 {
                     winnerOutput.setText("Tie!");
                 }
