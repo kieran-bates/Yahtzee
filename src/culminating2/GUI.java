@@ -21,7 +21,7 @@ public class GUI extends javax.swing.JFrame {
     }
     
     /**
-     * 
+     * Checks for a full house using a bubble sort based algorithm
      * @return 
      */
     public boolean fullHouseCheck()
@@ -52,7 +52,7 @@ public class GUI extends javax.swing.JFrame {
                 }
             }
         }
-        if(numbers[0]==numbers[1] && numbers[2]==numbers[3] && numbers[3]==numbers[4] && numbers[2] == numbers[4])
+        if(numbers[0]==numbers[1] && numbers[2]==numbers[3] && numbers[3]==numbers[4] && numbers[2] == numbers[4]) //Check to see if data meets conditions for full house
         {
             return true;
         }
@@ -61,6 +61,11 @@ public class GUI extends javax.swing.JFrame {
             return false;
         }
     }
+    
+    /**
+     * checks for a yahtzee by comparing the contents of each die.  
+     * @return 
+     */
     public boolean yahtzeeCheck()
     {
         int oneReg = Integer.parseInt(one.getText());
@@ -69,7 +74,7 @@ public class GUI extends javax.swing.JFrame {
         int fourReg = Integer.parseInt(four.getText());
         int fiveReg = Integer.parseInt(five.getText());
         
-        if(oneReg == twoReg && oneReg == threeReg && oneReg == fourReg && oneReg == fiveReg)
+        if(oneReg == twoReg && oneReg == threeReg && oneReg == fourReg && oneReg == fiveReg) //Check to see if data meets conditions for a yahtzee
         {
             return true;
         }
@@ -78,6 +83,11 @@ public class GUI extends javax.swing.JFrame {
             return false;
         }
     }
+    
+    /**
+     * checks for a large straight using a bubble sort based method
+     * @return 
+     */
     public boolean largeStraightCheck()
     {
         int numbers[] = new int[5];
@@ -106,7 +116,7 @@ public class GUI extends javax.swing.JFrame {
                 }
             }
         }
-        
+        //Removes duplicate numbers in the bubble sorted sequence
         if(numbers[0] == numbers[1] || numbers[0] == numbers[2] || numbers[0] == numbers[3] || numbers[0] == numbers[4])
         {
             numbers[0] = -1;
@@ -138,11 +148,11 @@ public class GUI extends javax.swing.JFrame {
             }
             else
             {
-                finalValue += String.valueOf(numbers[i]);
+                finalValue += String.valueOf(numbers[i]); //Print the values that are not duplicates
             }
         }
         
-        if(finalValue.equals("12345")||finalValue.equals("23456"))
+        if(finalValue.equals("12345")||finalValue.equals("23456")) //If sequence meets conditions for large straight
         {
             return true;
         }
@@ -151,6 +161,11 @@ public class GUI extends javax.swing.JFrame {
         return false;
         }
     }
+    
+    /**
+     * checks for a small straight using a bubble sort method
+     * @return 
+     */
     public boolean smallStraightCheck()
     {
         int numbers[] = new int[5];
@@ -179,7 +194,7 @@ public class GUI extends javax.swing.JFrame {
                 }
             }
         }
-        
+        //Remove any duplicate numbers from the sequence
         if(numbers[0] == numbers[1] || numbers[0] == numbers[2] || numbers[0] == numbers[3] || numbers[0] == numbers[4])
         {
             numbers[0] = -1;
@@ -211,12 +226,12 @@ public class GUI extends javax.swing.JFrame {
             }
             else
             {
-                finalValue += String.valueOf(numbers[i]);
+                finalValue += String.valueOf(numbers[i]); //store sequence and jump over duplicates
             }
         }
         
         
-        if(finalValue.equals("1234")||finalValue.equals("2345")||finalValue.equals("3456")||finalValue.equals("12345")||finalValue.equals("23456"))
+        if(finalValue.equals("1234")||finalValue.equals("2345")||finalValue.equals("3456")||finalValue.equals("12345")||finalValue.equals("23456")) //Check to see if the data meets the conditions for a small straight
         {
             return true;
         }
@@ -225,6 +240,11 @@ public class GUI extends javax.swing.JFrame {
         return false;
         }
     }
+    
+    /**
+     * checks for a three of a kind by counting how many of each number have been used and seeing if a count totals to three
+     * @return 
+     */
     public boolean threeOfAKindCheck()
     {
         int onesCount = 0;
@@ -359,7 +379,7 @@ public class GUI extends javax.swing.JFrame {
             sixesCount = sixesCount+1;
         }
         
-        if(onesCount >= 3 || twosCount >= 3 || threesCount >= 3 || foursCount >= 3 || fivesCount >= 3 || sixesCount >= 3)
+        if(onesCount >= 3 || twosCount >= 3 || threesCount >= 3 || foursCount >= 3 || fivesCount >= 3 || sixesCount >= 3) //Check to see if conditions are appropriate for a three of a kind
         {
             return true;
         }
@@ -368,6 +388,11 @@ public class GUI extends javax.swing.JFrame {
             return false;
         }
     }
+    
+    /**
+     * counts how many of each number have been used and checks to see if a count adds to four
+     * @return 
+     */
     public boolean fourOfAKindCheck()
     {
         int onesCount = 0;
@@ -502,7 +527,7 @@ public class GUI extends javax.swing.JFrame {
             sixesCount = sixesCount+1;
         }
         
-        if(onesCount == 4 || twosCount == 4 || threesCount == 4 || foursCount == 4 || fivesCount == 4 || sixesCount == 4)
+        if(onesCount == 4 || twosCount == 4 || threesCount == 4 || foursCount == 4 || fivesCount == 4 || sixesCount == 4) //check to see if data meets conditions for a four of a kind
         {
             return true;
         }
@@ -511,6 +536,11 @@ public class GUI extends javax.swing.JFrame {
             return false;
         }
     }
+    
+    /**
+     * checks to see how many ones are stored in the dice
+     * @return 
+     */
     public boolean onesCheck()
     {
         if(oneReg == 1||twoReg == 1||threeReg == 1||fourReg == 1||fiveReg == 1)
@@ -522,6 +552,11 @@ public class GUI extends javax.swing.JFrame {
             return false;
         }
     }
+    
+    /**
+     * checks to see how many twos are stored in the dice
+     * @return 
+     */
     public boolean twosCheck()
     {
         if(oneReg == 2||twoReg == 2||threeReg == 2||fourReg == 2||fiveReg == 2)
@@ -533,6 +568,11 @@ public class GUI extends javax.swing.JFrame {
             return false;
         }
     }
+    
+    /**
+     * checks to see how many threes are stored in the dice
+     * @return 
+     */
     public boolean threesCheck()
     {
         if(oneReg == 3||twoReg == 3||threeReg == 3||fourReg == 3||fiveReg == 3)
@@ -544,6 +584,11 @@ public class GUI extends javax.swing.JFrame {
             return false;
         }
     }
+    
+    /**
+     * checks to see how many fours are stored in the dice
+     * @return 
+     */
     public boolean foursCheck()
     {
         if(oneReg == 4||twoReg == 4||threeReg == 4||fourReg == 4||fiveReg == 4)
@@ -555,6 +600,11 @@ public class GUI extends javax.swing.JFrame {
             return false;
         }
     }
+    
+    /**
+     * checks to see how many fives are stored in the dice
+     * @return 
+     */
     public boolean fivesCheck()
     {
         if(oneReg == 5||twoReg == 5||threeReg == 5||fourReg == 5||fiveReg == 5)
@@ -566,6 +616,11 @@ public class GUI extends javax.swing.JFrame {
             return false;
         }
     }
+    
+    /**
+     * checks to see how many sixes are stored in the dice
+     * @return 
+     */
     public boolean sixesCheck()
     {
         if(oneReg == 6||twoReg == 6||threeReg == 6||fourReg == 6||fiveReg == 6)
@@ -623,6 +678,9 @@ public class GUI extends javax.swing.JFrame {
     
     int playerOneTotalScore = 0;
     int playerTwoTotalScore = 0;
+    
+    boolean playerOneChanceUsed = false;
+    boolean playerTwoChanceUsed = false;
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -1405,6 +1463,7 @@ public class GUI extends javax.swing.JFrame {
         
         if(rollCount == 0)
         {
+            //enable and disable appropriate buttons
             playerOneRoll.setEnabled(false);
             playerTwoRoll.setEnabled(true);
             playerTwoAces.setEnabled(true);
@@ -1487,6 +1546,7 @@ public class GUI extends javax.swing.JFrame {
         boolean repeat = true;
         int temp;
         
+        //generate random numbers and see if they are zero.  If they are, regenerate
         while(repeat == true)
         {
             temp = random.nextInt(7);
@@ -1560,6 +1620,7 @@ public class GUI extends javax.swing.JFrame {
         rollCount = rollCount - 1;
         playerOneRoll.setText("Roll "+rollCount);
         
+        //store random numbers in variables for processing
         oneReg = Integer.parseInt(one.getText());
         twoReg = Integer.parseInt(two.getText());
         threeReg = Integer.parseInt(three.getText());
@@ -1658,6 +1719,14 @@ public class GUI extends javax.swing.JFrame {
         {
             playerOneFullHouse.setEnabled(false);
         }
+        if(playerOneChanceUsed == false)
+        {
+            playerOneChance.setEnabled(true);
+        }
+        if(playerOneChanceUsed == true)
+        {
+            playerOneChance.setEnabled(false);
+        }
         }
         
     }//GEN-LAST:event_playerOneRollActionPerformed
@@ -1666,6 +1735,8 @@ public class GUI extends javax.swing.JFrame {
         
         if(rollCount == 0)
         {
+            
+            //enable the buttons
             playerOneRoll.setEnabled(true);
             playerTwoRoll.setEnabled(false);
             playerTwoAces.setEnabled(false);
@@ -1915,11 +1986,20 @@ public class GUI extends javax.swing.JFrame {
         {
             playerTwoFullHouse.setEnabled(false);
         }
+        if(playerTwoChanceUsed == false)
+        {
+            playerTwoChance.setEnabled(true);
+        }
+        if(playerTwoChanceUsed == true)
+        {
+            playerTwoChance.setEnabled(false);
+        }
         }
     }//GEN-LAST:event_playerTwoRollActionPerformed
 
     private void playerOneAcesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerOneAcesActionPerformed
         
+        //change scores
         if (one.getText().equals("1"))
         {
             playerOneAcesScore = playerOneAcesScore+1;
@@ -1969,6 +2049,7 @@ public class GUI extends javax.swing.JFrame {
 
     private void playerOneTwosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerOneTwosActionPerformed
         
+        //adjust scores
         if (one.getText().equals("2"))
         {
             playerOneTwosScore = playerOneTwosScore+2;
@@ -2631,6 +2712,8 @@ public class GUI extends javax.swing.JFrame {
         playerOneFullHouse.setEnabled(false);
         playerOneYahtzee.setEnabled(false);
         playerOneChance.setEnabled(false);
+        
+        playerOneChanceUsed = true;
     }//GEN-LAST:event_playerOneChanceActionPerformed
 
     private void playerTwo3okActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerTwo3okActionPerformed
@@ -2810,6 +2893,8 @@ public class GUI extends javax.swing.JFrame {
         playerTwoFullHouse.setEnabled(false);
         playerTwoYahtzee.setEnabled(false);
         playerTwoChance.setEnabled(false);
+        
+        playerTwoChanceUsed = true;
     }//GEN-LAST:event_playerTwoChanceActionPerformed
 
     private void playerTwoYahtzeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerTwoYahtzeeActionPerformed
