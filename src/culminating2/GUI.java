@@ -382,7 +382,7 @@ public class GUI extends javax.swing.JFrame {
             sixesCount = sixesCount+1;
         }
         
-        if(onesCount >= 3 || twosCount >= 3 || threesCount >= 3 || foursCount >= 3 || fivesCount >= 3 || sixesCount >= 3) //Check to see if conditions are appropriate for a three of a kind
+        if(onesCount == 3 || twosCount == 3 || threesCount == 3 || foursCount == 3 || fivesCount == 3 || sixesCount == 3) //Check to see if conditions are appropriate for a three of a kind
         {
             return true;
         }
