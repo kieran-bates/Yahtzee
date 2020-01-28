@@ -56,6 +56,10 @@ public class GUI extends javax.swing.JFrame {
         {
             return true;
         }
+        else if(numbers[0]==numbers[1] && numbers[1]==numbers[2] && numbers[2]==numbers[0] && numbers[3]==numbers[4])
+        {
+            return true;
+        }
         else
         {
             return false;
@@ -230,8 +234,7 @@ public class GUI extends javax.swing.JFrame {
             }
         }
         
-        
-        if(finalValue.equals("1234")||finalValue.equals("2345")||finalValue.equals("3456")||finalValue.equals("12345")||finalValue.equals("23456")) //Check to see if the data meets the conditions for a small straight
+        if(finalValue.equals("1234")||finalValue.equals("2345")||finalValue.equals("3456")||finalValue.equals("12345")||finalValue.equals("23456")||finalValue.equals("12346")) //Check to see if the data meets the conditions for a small straight
         {
             return true;
         }
@@ -812,6 +815,7 @@ public class GUI extends javax.swing.JFrame {
 
         playerOneAces.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerOneAces.setText("Aces");
+        playerOneAces.setEnabled(false);
         playerOneAces.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playerOneAcesActionPerformed(evt);
@@ -825,6 +829,7 @@ public class GUI extends javax.swing.JFrame {
 
         playerOneTwos.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerOneTwos.setText("Twos");
+        playerOneTwos.setEnabled(false);
         playerOneTwos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playerOneTwosActionPerformed(evt);
@@ -838,6 +843,7 @@ public class GUI extends javax.swing.JFrame {
 
         playerOneThrees.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerOneThrees.setText("Threes");
+        playerOneThrees.setEnabled(false);
         playerOneThrees.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playerOneThreesActionPerformed(evt);
@@ -851,6 +857,7 @@ public class GUI extends javax.swing.JFrame {
 
         playerOneFours.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerOneFours.setText("Fours");
+        playerOneFours.setEnabled(false);
         playerOneFours.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playerOneFoursActionPerformed(evt);
@@ -864,6 +871,7 @@ public class GUI extends javax.swing.JFrame {
 
         playerOneFives.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerOneFives.setText("Fives");
+        playerOneFives.setEnabled(false);
         playerOneFives.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playerOneFivesActionPerformed(evt);
@@ -877,6 +885,7 @@ public class GUI extends javax.swing.JFrame {
 
         playerOneSixes.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerOneSixes.setText("Sixes");
+        playerOneSixes.setEnabled(false);
         playerOneSixes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playerOneSixesActionPerformed(evt);
@@ -890,6 +899,7 @@ public class GUI extends javax.swing.JFrame {
 
         playerTwoAces.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerTwoAces.setText("Aces");
+        playerTwoAces.setEnabled(false);
         playerTwoAces.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playerTwoAcesActionPerformed(evt);
@@ -903,6 +913,7 @@ public class GUI extends javax.swing.JFrame {
 
         playerTwoTwos.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerTwoTwos.setText("Twos");
+        playerTwoTwos.setEnabled(false);
         playerTwoTwos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playerTwoTwosActionPerformed(evt);
@@ -916,6 +927,7 @@ public class GUI extends javax.swing.JFrame {
 
         playerTwoThrees.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerTwoThrees.setText("Threes");
+        playerTwoThrees.setEnabled(false);
         playerTwoThrees.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playerTwoThreesActionPerformed(evt);
@@ -929,6 +941,7 @@ public class GUI extends javax.swing.JFrame {
 
         playerTwoFours.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerTwoFours.setText("Fours");
+        playerTwoFours.setEnabled(false);
         playerTwoFours.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playerTwoFoursActionPerformed(evt);
@@ -942,6 +955,7 @@ public class GUI extends javax.swing.JFrame {
 
         playerTwoFives.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerTwoFives.setText("Fives");
+        playerTwoFives.setEnabled(false);
         playerTwoFives.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playerTwoFivesActionPerformed(evt);
@@ -955,6 +969,7 @@ public class GUI extends javax.swing.JFrame {
 
         playerTwoSixes.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerTwoSixes.setText("Sixes");
+        playerTwoSixes.setEnabled(false);
         playerTwoSixes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playerTwoSixesActionPerformed(evt);
@@ -968,6 +983,7 @@ public class GUI extends javax.swing.JFrame {
 
         playerOne3ok.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerOne3ok.setText("3 of a Kind");
+        playerOne3ok.setEnabled(false);
         playerOne3ok.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playerOne3okActionPerformed(evt);
@@ -976,6 +992,7 @@ public class GUI extends javax.swing.JFrame {
 
         playerOne4ok.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerOne4ok.setText("4 of a Kind");
+        playerOne4ok.setEnabled(false);
         playerOne4ok.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playerOne4okActionPerformed(evt);
@@ -994,6 +1011,7 @@ public class GUI extends javax.swing.JFrame {
 
         playerOneFullHouse.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerOneFullHouse.setText("Full House");
+        playerOneFullHouse.setEnabled(false);
         playerOneFullHouse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playerOneFullHouseActionPerformed(evt);
@@ -1007,6 +1025,7 @@ public class GUI extends javax.swing.JFrame {
 
         playerOneSmallStraight.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerOneSmallStraight.setText("sm. straight");
+        playerOneSmallStraight.setEnabled(false);
         playerOneSmallStraight.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playerOneSmallStraightActionPerformed(evt);
@@ -1020,6 +1039,7 @@ public class GUI extends javax.swing.JFrame {
 
         playerOneLargeStraight.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerOneLargeStraight.setText("lg. straight");
+        playerOneLargeStraight.setEnabled(false);
         playerOneLargeStraight.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playerOneLargeStraightActionPerformed(evt);
@@ -1033,6 +1053,7 @@ public class GUI extends javax.swing.JFrame {
 
         playerOneChance.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerOneChance.setText("Chance");
+        playerOneChance.setEnabled(false);
         playerOneChance.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playerOneChanceActionPerformed(evt);
@@ -1046,6 +1067,7 @@ public class GUI extends javax.swing.JFrame {
 
         playerOneYahtzee.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerOneYahtzee.setText("Yahtzee");
+        playerOneYahtzee.setEnabled(false);
         playerOneYahtzee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playerOneYahtzeeActionPerformed(evt);
@@ -1059,6 +1081,7 @@ public class GUI extends javax.swing.JFrame {
 
         playerTwo3ok.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerTwo3ok.setText("3 of a Kind");
+        playerTwo3ok.setEnabled(false);
         playerTwo3ok.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playerTwo3okActionPerformed(evt);
@@ -1072,6 +1095,7 @@ public class GUI extends javax.swing.JFrame {
 
         playerTwo4ok.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerTwo4ok.setText("4 of a Kind");
+        playerTwo4ok.setEnabled(false);
         playerTwo4ok.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playerTwo4okActionPerformed(evt);
@@ -1085,6 +1109,7 @@ public class GUI extends javax.swing.JFrame {
 
         playerTwoFullHouse.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerTwoFullHouse.setText("Full House");
+        playerTwoFullHouse.setEnabled(false);
         playerTwoFullHouse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playerTwoFullHouseActionPerformed(evt);
@@ -1098,6 +1123,7 @@ public class GUI extends javax.swing.JFrame {
 
         playerTwoSmallStraight.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerTwoSmallStraight.setText("sm. straight");
+        playerTwoSmallStraight.setEnabled(false);
         playerTwoSmallStraight.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playerTwoSmallStraightActionPerformed(evt);
@@ -1111,6 +1137,7 @@ public class GUI extends javax.swing.JFrame {
 
         playerTwoLargeStraight.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerTwoLargeStraight.setText("lg. straight");
+        playerTwoLargeStraight.setEnabled(false);
         playerTwoLargeStraight.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playerTwoLargeStraightActionPerformed(evt);
@@ -1124,6 +1151,7 @@ public class GUI extends javax.swing.JFrame {
 
         playerTwoYahtzee.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerTwoYahtzee.setText("Yahtzee");
+        playerTwoYahtzee.setEnabled(false);
         playerTwoYahtzee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playerTwoYahtzeeActionPerformed(evt);
@@ -1137,6 +1165,7 @@ public class GUI extends javax.swing.JFrame {
 
         playerTwoChance.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         playerTwoChance.setText("Chance");
+        playerTwoChance.setEnabled(false);
         playerTwoChance.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playerTwoChanceActionPerformed(evt);
@@ -1146,10 +1175,17 @@ public class GUI extends javax.swing.JFrame {
         playerOneTotalScoreOut.setEditable(false);
         playerOneTotalScoreOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         playerOneTotalScoreOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        playerOneTotalScoreOut.setText("0");
+        playerOneTotalScoreOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playerOneTotalScoreOutActionPerformed(evt);
+            }
+        });
 
         playerTwoTotalScoreOut.setEditable(false);
         playerTwoTotalScoreOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         playerTwoTotalScoreOut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        playerTwoTotalScoreOut.setText("0");
 
         winnerOutput.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         winnerOutput.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1236,7 +1272,9 @@ public class GUI extends javax.swing.JFrame {
                                         .addComponent(four, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(five, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(winnerOutput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(51, 51, 51)
+                                        .addComponent(winnerOutput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel2))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -1473,9 +1511,12 @@ public class GUI extends javax.swing.JFrame {
             playerTwoFives.setEnabled(true);
             playerTwoSixes.setEnabled(true);
             playerTwoSmallStraight.setEnabled(true);
-            playerTwoSmallStraight.setEnabled(true);
+            playerTwoLargeStraight.setEnabled(true);
             playerTwoYahtzee.setEnabled(true);
             playerTwoFullHouse.setEnabled(true);
+            playerTwo3ok.setEnabled(true);
+            playerTwo4ok.setEnabled(true);
+            playerTwoChance.setEnabled(true);
             playerOneAces.setEnabled(false);
             playerOneTwos.setEnabled(false);
             playerOneThrees.setEnabled(false);
@@ -1486,6 +1527,9 @@ public class GUI extends javax.swing.JFrame {
             playerOneLargeStraight.setEnabled(false);
             playerOneYahtzee.setEnabled(false);
             playerOneFullHouse.setEnabled(false);
+            playerOne3ok.setEnabled(false);
+            playerOne4ok.setEnabled(false);
+            playerOneChance.setEnabled(false);
             rollCount = 3;
             playerOneRoll.setText("Roll 3");
             one.setText("0");
@@ -1749,6 +1793,9 @@ public class GUI extends javax.swing.JFrame {
             playerTwoLargeStraight.setEnabled(false);
             playerTwoYahtzee.setEnabled(false);
             playerTwoFullHouse.setEnabled(false);
+            playerTwo3ok.setEnabled(false);
+            playerTwo4ok.setEnabled(false);
+            playerTwoChance.setEnabled(false);
             playerOneAces.setEnabled(true);
             playerOneTwos.setEnabled(true);
             playerOneThrees.setEnabled(true);
@@ -1759,6 +1806,9 @@ public class GUI extends javax.swing.JFrame {
             playerOneLargeStraight.setEnabled(true);
             playerOneYahtzee.setEnabled(true);
             playerOneFullHouse.setEnabled(true);
+            playerOne3ok.setEnabled(true);
+            playerOne4ok.setEnabled(true);
+            playerOneChance.setEnabled(true);
             rollCount = 3;
             playerTwoRoll.setText("Roll 3");
             one.setText("0");
@@ -2574,7 +2624,7 @@ public class GUI extends javax.swing.JFrame {
         
         playerOneLargeStraightScore = playerOneLargeStraightScore + oneReg+twoReg+threeReg+fourReg+fiveReg;
         
-        playerOneLargeStraightOut.setText(String.valueOf(playerOneLargeStraight));
+        playerOneLargeStraightOut.setText(String.valueOf(playerOneLargeStraightScore));
         
         playerOneTotalScore = playerOneTotalScore + oneReg+twoReg+threeReg+fourReg+fiveReg;
         playerOneTotalScoreOut.setText(String.valueOf(playerOneTotalScore));
@@ -2845,7 +2895,7 @@ public class GUI extends javax.swing.JFrame {
         
         playerTwoLargeStraightScore = playerTwoLargeStraightScore + oneReg+twoReg+threeReg+fourReg+fiveReg;
         
-        playerTwoLargeStraightOut.setText(String.valueOf(playerTwoLargeStraight));
+        playerTwoLargeStraightOut.setText(String.valueOf(playerTwoLargeStraightScore));
         
         playerTwoTotalScore = playerTwoTotalScore + oneReg+twoReg+threeReg+fourReg+fiveReg;
         playerTwoTotalScoreOut.setText(String.valueOf(playerTwoTotalScore));
@@ -2926,6 +2976,10 @@ public class GUI extends javax.swing.JFrame {
         playerTwoYahtzee.setEnabled(false);
         playerTwoChance.setEnabled(false);
     }//GEN-LAST:event_playerTwoYahtzeeActionPerformed
+
+    private void playerOneTotalScoreOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playerOneTotalScoreOutActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_playerOneTotalScoreOutActionPerformed
 
     /**
      * @param args the command line arguments
